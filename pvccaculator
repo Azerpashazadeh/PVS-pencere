@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kozijnen &amp; Deuren — Configurator</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --bg:#FAF7F0;
+    --card:#FFFFFF;
+    --card-2:#F5F1E7;
+    --border:#E7E0CE;
+    --border-strong:#D8CEB6;
+    --ink:#1C2230;
+    --muted:#75808F;
+    --muted-2:#9AA3AE;
+    --accent:#D9601F;
+    --accent-hover:#C4531A;
+    --accent-soft:#FBE7D8;
+    --navy:#1F2D45;
+    --navy-soft:#EBEEF3;
+    --ok:#2F8F5B;
+    --radius:12px;
+    --radius-sm:8px;
+    --shadow-sm:0 1px 2px rgba(28,34,48,0.04);
+    --shadow:0 2px 12px rgba(28,34,48,0.06);
+    --shadow-lg:0 8px 30px rgba(28,34,48,0.10);
+    --ring:0 0 0 3px rgba(217,96,31,0.18);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:transparent;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important;transition-duration:.001ms !important;}
+  }
+
+  .kzw{max-width:1240px;margin:0 auto;background:var(--bg);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-lg);}
+
+  /* ---------- HEAD ---------- */
+  .kzw-head{padding:38px 40px 26px;border-bottom:1px solid var(--border);position:relative;}
+  .kzw-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 12px;font-weight:600;}
+  .kzw-eyebrow::before{content:"";width:22px;height:2px;background:var(--accent);border-radius:2px;}
+  .kzw-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:32px;margin:0 0 10px;letter-spacing:-.015em;color:var(--ink);line-height:1.1;}
+  .kzw-sub{font-size:14.5px;color:var(--muted);max-width:580px;line-height:1.6;margin:0;}
+
+  .kzw-body{display:grid;grid-template-columns:0.92fr 1.08fr;gap:0;}
+  @media (max-width:980px){.kzw-body{grid-template-columns:1fr;}}
+
+  /* ---------- DRAWING SIDE ---------- */
+  .kzw-draw{padding:30px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:18px;background:var(--card-2);}
+  @media (max-width:980px){.kzw-draw{border-right:none;border-bottom:1px solid var(--border);}}
+
+  .kzw-viewtabs{display:flex;gap:6px;background:var(--bg);padding:4px;border-radius:var(--radius-sm);border:1px solid var(--border);}
+  .kzw-viewtab{flex:1;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:9px 8px;border-radius:6px;cursor:pointer;border:none;background:transparent;font-weight:600;transition:all .15s;}
+  .kzw-viewtab.active{background:var(--navy);color:#fff;box-shadow:var(--shadow-sm);}
+
+  .kzw-viewcard{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);}
+  .kzw-viewcard.hide{display:none;}
+  .kzw-viewhead{display:flex;justify-content:space-between;align-items:center;padding:13px 18px;border-bottom:1px solid var(--border);}
+  .kzw-viewlabel{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);}
+  .kzw-viewm2{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--accent);font-weight:600;}
+  .kzw-viewbody{padding:18px;display:flex;align-items:center;justify-content:center;background:
+      radial-gradient(circle at center, rgba(28,34,48,0.02), transparent 70%),
+      repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(28,34,48,0.03) 19px, rgba(28,34,48,0.03) 20px),
+      repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(28,34,48,0.03) 19px, rgba(28,34,48,0.03) 20px);
+  }
+  .kzw-viewbody svg{max-width:100%;height:auto;display:block;}
+
+  .kzw-dimsummary{display:flex;gap:8px;}
+  .kzw-dimcell{flex:1;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:11px 13px;box-shadow:var(--shadow-sm);}
+  .kzw-dimcell .k{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2);display:block;margin-bottom:4px;}
+  .kzw-dimcell .v{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;color:var(--ink);}
+  .kzw-dimcell .u{font-size:11px;color:var(--muted);font-weight:500;margin-left:2px;}
+
+  /* ---------- FORM SIDE ---------- */
+  .kzw-form{padding:30px;display:flex;flex-direction:column;gap:26px;}
+
+  .kzw-step{display:flex;flex-direction:column;gap:12px;}
+  .kzw-step-t{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:var(--ink);font-family:'Space Grotesk',sans-serif;letter-spacing:.005em;}
+  .kzw-step-n{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;background:var(--navy-soft);color:var(--navy);font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;flex-shrink:0;}
+
+  .kzw-pillgrid{display:flex;flex-wrap:wrap;gap:8px;}
+  .kzw-pill{
+    background:var(--card);border:1.5px solid var(--border);color:var(--ink);
+    padding:10px 16px;font-size:13.5px;border-radius:var(--radius-sm);cursor:pointer;
+    font-family:'Inter',sans-serif;font-weight:600;transition:all .14s;box-shadow:var(--shadow-sm);
+  }
+  .kzw-pill:hover{border-color:var(--border-strong);transform:translateY(-1px);}
+  .kzw-pill:focus-visible{outline:none;box-shadow:var(--ring);}
+  .kzw-pill.active{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 2px 8px rgba(217,96,31,0.25);}
+  .kzw-pill.active:hover{background:var(--accent-hover);border-color:var(--accent-hover);}
+
+  .kzw-divgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;}
+  @media (max-width:420px){.kzw-divgrid{grid-template-columns:repeat(2,1fr);}}
+  .kzw-divcard{
+    background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius-sm);
+    padding:12px 8px 9px;cursor:pointer;text-align:center;transition:all .14s;box-shadow:var(--shadow-sm);
+  }
+  .kzw-divcard:hover{border-color:var(--border-strong);transform:translateY(-1px);}
+  .kzw-divcard:focus-visible{outline:none;box-shadow:var(--ring);}
+  .kzw-divcard.active{border-color:var(--accent);background:var(--accent-soft);}
+  .kzw-divcard svg{width:100%;height:34px;display:block;margin-bottom:7px;}
+  .kzw-divcard span{font-size:10.5px;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-weight:500;}
+  .kzw-divcard.active span{color:var(--accent);}
+
+  .kzw-baylist{display:flex;flex-direction:column;gap:9px;}
+  .kzw-bayrow{display:grid;grid-template-columns:78px 1fr;align-items:center;gap:12px;}
+  .kzw-baylabel{font-size:11.5px;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-weight:500;}
+
+  .kzw-select{
+    width:100%;background:var(--card);border:1.5px solid var(--border);color:var(--ink);
+    padding:11px 13px;font-size:13.5px;border-radius:var(--radius-sm);font-family:'Inter',sans-serif;
+    appearance:none;font-weight:500;cursor:pointer;transition:all .14s;box-shadow:var(--shadow-sm);
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M0 0L5 6L10 0Z' fill='%2375808F'/></svg>");
+    background-repeat:no-repeat;background-position:right 14px center;
+  }
+  .kzw-select:hover{border-color:var(--border-strong);}
+  .kzw-select:focus{outline:none;border-color:var(--accent);box-shadow:var(--ring);}
+
+  .kzw-row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:420px){.kzw-row2{grid-template-columns:1fr;}}
+  .kzw-field label{display:flex;justify-content:space-between;align-items:baseline;font-size:11.5px;color:var(--muted);margin-bottom:9px;font-family:'IBM Plex Mono',monospace;font-weight:500;}
+  .kzw-field label b{color:var(--ink);font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;}
+  .kzw-field input[type=range]{
+    width:100%;accent-color:var(--accent);height:5px;margin-top:2px;cursor:pointer;
+  }
+  .kzw-field input[type=range]:focus-visible{outline:none;box-shadow:var(--ring);border-radius:4px;}
+  .kzw-field input[type=number]{
+    width:100%;background:var(--card);border:1.5px solid var(--border);color:var(--ink);
+    padding:10px 12px;font-family:'IBM Plex Mono',monospace;font-size:13px;border-radius:var(--radius-sm);margin-bottom:8px;transition:all .14s;box-shadow:var(--shadow-sm);
+  }
+  .kzw-field input[type=number]:focus{outline:none;border-color:var(--accent);box-shadow:var(--ring);}
+
+  .kzw-checkrow{display:flex;flex-wrap:wrap;gap:8px;}
+  .kzw-check{
+    display:flex;align-items:center;gap:8px;background:var(--card);border:1.5px solid var(--border);
+    padding:9px 13px;border-radius:var(--radius-sm);font-size:12.5px;cursor:pointer;color:var(--muted);
+    transition:all .14s;box-shadow:var(--shadow-sm);font-weight:500;
+  }
+  .kzw-check:hover{border-color:var(--border-strong);}
+  .kzw-check.on{border-color:var(--accent);color:var(--ink);background:var(--accent-soft);}
+  .kzw-check::before{content:"";width:15px;height:15px;border-radius:4px;border:1.5px solid var(--muted-2);flex-shrink:0;transition:all .14s;background:var(--card);}
+  .kzw-check.on::before{background:var(--accent);border-color:var(--accent);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'><path d='M1 4L3.5 6.5L9 1' stroke='white' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");background-repeat:no-repeat;background-position:center;}
+  .kzw-check input{display:none;}
+
+  .kzw-hint{font-size:11.5px;color:var(--muted-2);margin-top:2px;line-height:1.5;}
+
+  .kzw-divider{height:1px;background:var(--border);}
+
+  /* ---------- TIER CARDS ---------- */
+  .kzw-tiers{display:flex;flex-direction:column;gap:10px;}
+  .kzw-tier{
+    display:flex;justify-content:space-between;align-items:center;gap:14px;
+    background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);
+    padding:15px 17px;cursor:pointer;transition:all .14s;box-shadow:var(--shadow-sm);position:relative;
+  }
+  .kzw-tier:hover{border-color:var(--border-strong);transform:translateY(-1px);box-shadow:var(--shadow);}
+  .kzw-tier:focus-visible{outline:none;box-shadow:var(--ring);}
+  .kzw-tier.active{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 2px 12px rgba(217,96,31,0.12);}
+  .kzw-tier-left{display:flex;flex-direction:column;gap:5px;}
+  .kzw-tier-badge{
+    font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
+    background:var(--navy);color:#fff;padding:3px 9px;border-radius:4px;width:fit-content;font-weight:600;
+  }
+  .kzw-tier.active .kzw-tier-badge{background:var(--accent);}
+  .kzw-tier-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14.5px;}
+  .kzw-tier-brand{font-size:11.5px;color:var(--muted);}
+  .kzw-tier-price{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15.5px;color:var(--ink);text-align:right;white-space:nowrap;}
+  .kzw-tier.active .kzw-tier-price{color:var(--accent);}
+  .kzw-tier-unit{font-size:10px;color:var(--muted-2);text-align:right;margin-top:2px;}
+  .kzw-tier-check{position:absolute;top:-7px;right:-7px;width:22px;height:22px;border-radius:50%;background:var(--accent);display:none;align-items:center;justify-content:center;box-shadow:var(--shadow);}
+  .kzw-tier.active .kzw-tier-check{display:flex;}
+
+  .kzw-pricenote{font-size:11.5px;color:var(--muted-2);line-height:1.55;margin:0;}
+
+  .kzw-actions{display:flex;gap:10px;flex-wrap:wrap;}
+  .kzw-btn{font-family:'Inter',sans-serif;font-weight:700;font-size:14px;padding:13px 22px;border-radius:var(--radius-sm);border:1.5px solid transparent;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;justify-content:center;gap:8px;}
+  .kzw-btn:focus-visible{outline:none;box-shadow:var(--ring);}
+  .kzw-btn:active{transform:translateY(1px);}
+  .kzw-btn-primary{background:var(--accent);color:#fff;box-shadow:0 2px 8px rgba(217,96,31,0.25);flex:1;}
+  .kzw-btn-primary:hover{background:var(--accent-hover);}
+  .kzw-btn-ghost{background:var(--card);color:var(--ink);border-color:var(--border);box-shadow:var(--shadow-sm);}
+  .kzw-btn-ghost:hover{border-color:var(--ink);}
+
+  .kzw-positions{display:flex;flex-direction:column;gap:8px;}
+  .kzw-pos-item{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 15px;font-size:12.5px;color:var(--muted);box-shadow:var(--shadow-sm);animation:slideIn .2s ease;}
+  @keyframes slideIn{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:translateY(0);}}
+  .kzw-pos-item b{color:var(--ink);}
+  .kzw-pos-price{display:flex;align-items:center;gap:10px;white-space:nowrap;font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--ink);}
+  .kzw-pos-remove{background:none;border:none;color:var(--muted-2);cursor:pointer;font-size:18px;line-height:1;padding:2px 6px;border-radius:4px;transition:all .14s;}
+  .kzw-pos-remove:hover{color:var(--accent);background:var(--accent-soft);}
+  .kzw-pos-remove:focus-visible{outline:none;box-shadow:var(--ring);}
+  .kzw-empty{font-size:12.5px;color:var(--muted-2);font-style:italic;padding:6px 2px;}
+  .kzw-postotal{display:flex;justify-content:space-between;align-items:center;padding:14px 17px;background:var(--navy);border-radius:var(--radius);color:#fff;box-shadow:var(--shadow);}
+  .kzw-postotal span{font-size:13px;opacity:.85;}
+  .kzw-postotal b{font-family:'Space Grotesk',sans-serif;font-size:19px;}
+
+  /* ---------- STICKY LIVE PRICE (mobile) ---------- */
+  .kzw-livebar{display:none;}
+
+  /* ---------- QUOTE ---------- */
+  .kzw-quote{border-top:1px solid var(--border);padding:30px 40px 36px;display:none;background:var(--card-2);}
+  .kzw-quote.open{display:block;animation:slideIn .25s ease;}
+  .kzw-quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;}
+  @media (max-width:600px){.kzw-quote-grid{grid-template-columns:1fr;}}
+  .kzw-quote-grid input,.kzw-quote-grid textarea{width:100%;background:var(--card);border:1.5px solid var(--border);color:var(--ink);padding:11px 13px;font-size:13.5px;border-radius:var(--radius-sm);font-family:'Inter',sans-serif;transition:all .14s;box-shadow:var(--shadow-sm);}
+  .kzw-quote-grid textarea{grid-column:1/-1;min-height:74px;resize:vertical;}
+  .kzw-quote-grid input:focus,.kzw-quote-grid textarea:focus{outline:none;border-color:var(--accent);box-shadow:var(--ring);}
+  .kzw-quote-foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;flex-wrap:wrap;gap:12px;}
+  .kzw-sent{color:var(--ok);font-size:13px;font-family:'IBM Plex Mono',monospace;display:none;font-weight:600;align-items:center;gap:7px;}
+  .kzw-sent.show{display:inline-flex;}
+
+  .kzw-foot{padding:18px 40px;border-top:1px solid var(--border);font-size:11px;color:var(--muted-2);font-family:'IBM Plex Mono',monospace;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+  .kzw-foot span{display:inline-flex;align-items:center;gap:7px;}
+  .kzw-foot span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);}
+</style>
+</head>
+<body>
+
+<div class="kzw">
+  <div class="kzw-head">
+    <p class="kzw-eyebrow">Configurator · Richtprijs</p>
+    <h1 class="kzw-title">Stel uw kozijn samen</h1>
+    <p class="kzw-sub">Configureer uw kozijn tot in detail en bekijk direct een indicatieve richtprijs. Vraag met één klik een offerte aan — inclusief tekening. Excl. montage en btw.</p>
+  </div>
+
+  <div class="kzw-body">
+    <!-- ============ DRAWING SIDE ============ -->
+    <div class="kzw-draw">
+      <div class="kzw-viewtabs" role="tablist" aria-label="Aanzicht">
+        <button class="kzw-viewtab active" data-view="interior" role="tab" aria-selected="true">Binnenaanzicht</button>
+        <button class="kzw-viewtab" data-view="exterior" role="tab" aria-selected="false">Buitenaanzicht</button>
+      </div>
+
+      <div class="kzw-viewcard" id="cardInterior">
+        <div class="kzw-viewhead"><span class="kzw-viewlabel">Binnenaanzicht</span><span class="kzw-viewm2" id="m2Interior">0,00 m²</span></div>
+        <div class="kzw-viewbody"><svg id="svgInterior" viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg"><g id="artInterior"></g></svg></div>
+      </div>
+      <div class="kzw-viewcard hide" id="cardExterior">
+        <div class="kzw-viewhead"><span class="kzw-viewlabel">Buitenaanzicht</span><span class="kzw-viewm2" id="m2Exterior">0,00 m²</span></div>
+        <div class="kzw-viewbody"><svg id="svgExterior" viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg"><g id="artExterior"></g></svg></div>
+      </div>
+
+      <div class="kzw-dimsummary">
+        <div class="kzw-dimcell"><span class="k">Breedte</span><span class="v" id="sumW">—</span><span class="u">mm</span></div>
+        <div class="kzw-dimcell"><span class="k">Hoogte</span><span class="v" id="sumH">—</span><span class="u">mm</span></div>
+        <div class="kzw-dimcell"><span class="k">Oppervlak</span><span class="v" id="sumM2">—</span><span class="u">m²</span></div>
+      </div>
+    </div>
+
+    <!-- ============ FORM SIDE ============ -->
+    <div class="kzw-form">
+
+      <div class="kzw-step">
+        <div class="kzw-step-t"><span class="kzw-step-n">1</span>Materiaal</div>
+        <div class="kzw-pillgrid" id="matGroup">
+          <button class="kzw-pill active" data-mat="pvc">Kunststof (PVC)</button>
+          <button class="kzw-pill" data-mat="alu">Aluminium</button>
+        </div>
+      </div>
+
+      <div class="kzw-step">
+        <div class="kzw-step-t"><span class="kzw-step-n">2</span>Type</div>
+        <div class="kzw-pillgrid" id="typeGroup">
+          <button class="kzw-pill active" data-type="raam">Raam</button>
+          <button class="kzw-pill" data-type="deur">Deur</button>
+          <button class="kzw-pill" data-type="schuifpui">Schuifpui</button>
+          <button class="kzw-pill" data-type="vouwdeur">Vouwdeur</button>
+        </div>
+      </div>
+
+      <div class="kzw-step">
+        <div class="kzw-step-t"><span class="kzw-step-n">3</span>Verdeling</div>
+        <div class="kzw-divgrid" id="divGroup"></div>
+      </div>
+
+      <div class="kzw-step">
+        <div class="kzw-step-t"><span class="kzw-step-n">4</span>Per vak — vast of draaiend</div>
+        <div class="kzw-baylist" id="bayList"></div>
+      </div>
+
+      <div class="kzw-divider"></div>
+
+      <div class="kzw-step">
+        <div class="kzw-step-t"><span class="kzw-step-n">5</span>Afmetingen</div>
+        <div class="kzw-row2">
+          <div class="kzw-field">
+            <label for="widthNum">Breedte <b id="widthLbl">1200</b> mm</label>
+            <input type="number" id="widthNum" value="1200" min="400" max="4000" step="10" aria-label="Breedte in millimeter">
+            <input type="range" id="widthRange" value="1200" min="400" max="4000" step="10" aria-label="Breedte schuifregelaar">
+          </div>
+          <div class="kzw-field">
+            <label for="heightNum">Hoogte <b id="heightLbl">1400</b> mm</label>
+            <input type="number" id="heightNum" value="1400" min="400" max="3000" step="10" aria-label="Hoogte in millimeter">
+            <input type="range" id="heightRange" value="1400" min="400" max="3000" step="10" aria-label="Hoogte schuifregelaar">
+          </div>
+        </div>
+      </div>
+
+      <div class="kzw-divider"></div>
+
+      <div class="kzw-step">
+        <div class="kzw-step-t"><span class="kzw-step-n">6</span>Beglazing</div>
+        <div class="kzw-pillgrid" id="glassGroup">
+          <button class="kzw-pill active" data-glass="hr">HR++ (standaard)</button>
+          <button class="kzw-pill" data-glass="triple">Triple HR+++</button>
+        </div>
+        <div class="kzw-checkrow" id="extrasGroup">
+          <label class="kzw-check" data-extra="veiligheid"><input type="checkbox">Veiligheidsglas (gelaagd)</label>
+          <label class="kzw-check" data-extra="geluid"><input type="checkbox">Geluidwerend glas</label>
+          <label class="kzw-check" data-extra="zon"><input type="checkbox">Zonwerend glas</label>
+        </div>
+      </div>
+
+      <div class="kzw-step">
+        <div class="kzw-step-t"><span class="kzw-step-n">7</span>Kleur &amp; afwerking</div>
+        <div class="kzw-pillgrid" id="colorGroup">
+          <button class="kzw-pill active" data-color="wit">Wit (inbegrepen)</button>
+          <button class="kzw-pill" data-color="ral">Kernkleur RAL</button>
+          <button class="kzw-pill" data-color="folie">Folie met nerf</button>
+        </div>
+        <div class="kzw-hint" id="colorHint">Kernkleur: wit, door-en-door.</div>
+      </div>
+
+      <div class="kzw-divider"></div>
+
+      <div class="kzw-step">
+        <div class="kzw-step-t"><span class="kzw-step-n">8</span>Richtprijs — kies uw uitvoering</div>
+        <div class="kzw-tiers" id="tierList"></div>
+        <p class="kzw-pricenote">Indicatieve richtprijs per stuk, excl. montage &amp; btw. De definitieve prijs hangt af van beslag, detaillering en opmeting ter plaatse.</p>
+      </div>
+
+      <div class="kzw-actions">
+        <button class="kzw-btn kzw-btn-primary" id="addPosBtn">+ Positie toevoegen</button>
+        <button class="kzw-btn kzw-btn-ghost" id="requestBtn">Offerte aanvragen</button>
+      </div>
+
+      <div class="kzw-positions" id="posList">
+        <div class="kzw-empty">Nog geen posities toegevoegd.</div>
+      </div>
+      <div class="kzw-postotal" id="posTotal" style="display:none;">
+        <span>Totaal · <span id="posCount">0</span> posities</span>
+        <b id="posTotalVal">€ 0</b>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="kzw-quote" id="quoteBlock">
+    <div class="kzw-step-t"><span class="kzw-step-n">✓</span>Uw gegevens</div>
+    <div class="kzw-quote-grid">
+      <input type="text" placeholder="Naam" id="qName" autocomplete="name">
+      <input type="email" placeholder="E-mailadres" id="qEmail" autocomplete="email">
+      <input type="tel" placeholder="Telefoonnummer" id="qPhone" autocomplete="tel">
+      <input type="text" placeholder="Postcode + plaats" id="qAddress" autocomplete="postal-code">
+      <textarea placeholder="Toelichting (optioneel)" id="qNote"></textarea>
+    </div>
+    <div class="kzw-quote-foot">
+      <button class="kzw-btn kzw-btn-primary" id="sendQuoteBtn" style="flex:0 0 auto;">Verstuur aanvraag</button>
+      <span class="kzw-sent" id="sentMsg">✓ Verzonden — we nemen snel contact op, inclusief tekening.</span>
+    </div>
+  </div>
+
+  <div class="kzw-foot">
+    <span>Richtprijs, geen bindende offerte.</span>
+    <span>Levering &amp; montage door eigen team.</span>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ============================================================
+  // CONFIGURATIE — pas aan naar uw eigen inkoopprijzen, marges
+  // en de profielsystemen die uw fabriek daadwerkelijk voert.
+  // Alle basisprijzen zijn per m², "Voordelig/Standaard/Premium"
+  // staan voor drie profielsystemen/kwaliteitsniveaus.
+  // ============================================================
+  const TIERS = {
+    pvc: [
+      {id:'voordelig', label:'Voordelig', brand:'Profielsysteem A · 70mm', base:230},
+      {id:'standaard', label:'Standaard', brand:'Profielsysteem B · 76mm', base:270},
+      {id:'premium',   label:'Premium',   brand:'Profielsysteem C · 82mm', base:320},
+    ],
+    alu: [
+      {id:'voordelig', label:'Voordelig', brand:'Aluminiumsysteem A', base:350},
+      {id:'standaard', label:'Standaard', brand:'Aluminiumsysteem B', base:410},
+      {id:'premium',   label:'Premium',   brand:'Aluminiumsysteem C', base:490},
+    ]
+  };
+  const TYPE_MULT = { raam:1.0, deur:1.6, schuifpui:1.9, vouwdeur:2.2 };
+  const DIVISIONS = [
+    {id:'1vak',      label:'1 vak',     cols:[1]},
+    {id:'helft',     label:'1/2 · 1/2', cols:[1,1]},
+    {id:'tweederde', label:'1/3 · 2/3', cols:[1,2]},
+    {id:'kwart',     label:'1/4 · 3/4', cols:[1,3]},
+    {id:'drie',      label:'3 vakken',  cols:[1,1,1]},
+    {id:'vier',      label:'4 vakken',  cols:[1,1,1,1]},
+  ];
+  const DIVISION_MULT_PER_EXTRA_BAY = 0.055; // extra profiel/beslag per vak boven het eerste
+  const GLASS_MULT = { hr:1.0, triple:1.22 };
+  const EXTRAS_MULT = { veiligheid:0.06, geluid:0.10, zon:0.08 };
+  const COLOR_MULT = { wit:1.0, ral:1.08, folie:1.16 };
+  const RANGE_SPREAD = 0.10;
+  const MIN_PRICE = { pvc:150, alu:230 };
+  const BAY_OPENINGS = [
+    {id:'vast', label:'Vast (niet draaiend)'},
+    {id:'dk-links', label:'Draaikiep links'},
+    {id:'dk-rechts', label:'Draaikiep rechts'},
+    {id:'draai-links', label:'Draai links'},
+    {id:'draai-rechts', label:'Draai rechts'},
+  ];
+
+  const state = {
+    mat:'pvc', type:'raam', division:'1vak',
+    bays:['dk-links'],
+    width:1200, height:1400,
+    glass:'hr', extras:{veiligheid:false, geluid:false, zon:false},
+    color:'wit', tier:'standaard'
+  };
+  let positions = [];
+  const $ = (id)=>document.getElementById(id);
+
+  // ---------------- helpers ----------------
+  function fmtEuro(n){ return '€ ' + Math.round(n).toLocaleString('nl-NL'); }
+  function typeLabel(t){ return {raam:'Raam',deur:'Deur',schuifpui:'Schuifpui',vouwdeur:'Vouwdeur'}[t]; }
+  function matLabel(m){ return {pvc:'Kunststof (PVC)', alu:'Aluminium'}[m]; }
+  function divisionCfg(){ return DIVISIONS.find(d=>d.id===state.division); }
+  function bayLabel(id){ return BAY_OPENINGS.find(b=>b.id===id).label; }
+
+  function currentM2(){ return (state.width/1000) * (state.height/1000); }
+
+  function tierPrice(tierCfg){
+    const m2 = currentM2();
+    const bays = divisionCfg().cols.length;
+    const divMult = 1 + (bays-1) * DIVISION_MULT_PER_EXTRA_BAY;
+    let glassMult = GLASS_MULT[state.glass];
+    Object.keys(state.extras).forEach(k=>{ if(state.extras[k]) glassMult += EXTRAS_MULT[k]; });
+    let price = tierCfg.base * m2 * TYPE_MULT[state.type] * divMult * glassMult * COLOR_MULT[state.color];
+    price = Math.max(price, MIN_PRICE[state.mat]);
+    return price;
+  }
+
+  // ---------------- division mini icons ----------------
+  function divisionIconSVG(cols, active){
+    const w=64,h=30,pad=2;
+    const total = cols.reduce((a,b)=>a+b,0);
+    let x=pad; const usableW = w-2*pad;
+    let rects='';
+    cols.forEach((c,i)=>{
+      const cw = usableW*(c/total);
+      rects += `<rect x="${x}" y="${pad}" width="${cw-1.5}" height="${h-2*pad}" fill="none" stroke="${active?'#D9601F':'#B9BFC9'}" stroke-width="1.4"/>`;
+      x += cw;
+    });
+    return `<svg viewBox="0 0 ${w} ${h}" xmlns="http://www.w3.org/2000/svg">${rects}</svg>`;
+  }
+
+  function renderDivisionGrid(){
+    $('divGroup').innerHTML = DIVISIONS.map(d=>`
+      <div class="kzw-divcard ${d.id===state.division?'active':''}" data-div="${d.id}" tabindex="0" role="button" aria-pressed="${d.id===state.division}">
+        ${divisionIconSVG(d.cols, d.id===state.division)}
+        <span>${d.label}</span>
+      </div>
+    `).join('');
+    $('divGroup').querySelectorAll('.kzw-divcard').forEach(el=>{
+      const pick = ()=>{
+        state.division = el.dataset.div;
+        const n = divisionCfg().cols.length;
+        const newBays = [];
+        for(let i=0;i<n;i++) newBays.push(state.bays[i] || 'vast');
+        state.bays = newBays;
+        renderDivisionGrid(); renderBayList(); updateAll();
+      };
+      el.addEventListener('click', pick);
+      el.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); pick(); } });
+    });
+  }
+
+  function renderBayList(){
+    const n = divisionCfg().cols.length;
+    $('bayList').innerHTML = state.bays.map((val,i)=>`
+      <div class="kzw-bayrow">
+        <span class="kzw-baylabel">Vak ${i+1}</span>
+        <select class="kzw-select" data-bay="${i}" aria-label="Vak ${i+1} opening">
+          ${BAY_OPENINGS.map(o=>`<option value="${o.id}" ${o.id===val?'selected':''}>${o.label}</option>`).join('')}
+        </select>
+      </div>
+    `).join('');
+    $('bayList').querySelectorAll('select').forEach(sel=>{
+      sel.addEventListener('change', ()=>{
+        state.bays[+sel.dataset.bay] = sel.value;
+        updateAll();
+      });
+    });
+  }
+
+  // ---------------- technical drawing ----------------
+  function drawView(svgId, artId, mirror){
+    const svgW=340, svgH=300;
+    const marginTop=34, marginLeft=44, marginRight=26, marginBottom=26;
+    const maxW = svgW-marginLeft-marginRight, maxH = svgH-marginTop-marginBottom;
+    const ratio = state.width/state.height;
+    let drawW, drawH;
+    if (maxW/maxH > ratio){ drawH=maxH; drawW=maxH*ratio; } else { drawW=maxW; drawH=maxW/ratio; }
+    const x0 = marginLeft + (maxW-drawW)/2, y0 = marginTop + (maxH-drawH)/2;
+    const x1 = x0+drawW, y1 = y0+drawH;
+    const frameColor = state.mat==='alu' ? '#5B6B7A' : '#1C2230';
+    const glassFill = 'rgba(120,150,180,0.14)';
+    const fw = drawW*0.035;
+
+    let cols = divisionCfg().cols.slice();
+    let bays = state.bays.slice();
+    if (mirror){ cols = cols.slice().reverse(); bays = bays.slice().reverse(); }
+    const total = cols.reduce((a,b)=>a+b,0);
+
+    let inner = `<rect x="${x0}" y="${y0}" width="${drawW}" height="${drawH}" fill="none" stroke="${frameColor}" stroke-width="2.5"/>`;
+
+    let cx = x0+fw;
+    const innerTotalW = drawW-2*fw;
+    const iy0=y0+fw, iy1=y1-fw;
+
+    cols.forEach((c,i)=>{
+      const cw = innerTotalW*(c/total);
+      const bx0 = cx, bx1 = cx+cw - (i<cols.length-1?fw*0.6:0);
+      inner += `<rect x="${bx0}" y="${iy0}" width="${bx1-bx0}" height="${iy1-iy0}" fill="${glassFill}" stroke="${frameColor}" stroke-width="1.2"/>`;
+
+      const opening = bays[i] || 'vast';
+      if (opening !== 'vast'){
+        // "links"/"rechts" is defined from the OUTSIDE (buitenaanzicht),
+        // per NL/DIN convention. Interior view is the mirror image.
+        let hingeLeft = opening.includes('links');
+        if (mirror) hingeLeft = !hingeLeft;
+
+        const cxm = (bx0+bx1)/2, cym = (iy0+iy1)/2;
+        const pad = 3;
+        const stroke = `stroke="${frameColor}" stroke-width="1" stroke-dasharray="4 3"`;
+
+        // Convention (matches supplied reference): the dashed triangles CONVERGE
+        // at the HANDLE. The apex point = handle side; the hinge is the opposite
+        // stile (base of the draai triangle). handleLeft mirrors hingeLeft.
+        const handleLeft = hingeLeft;      // handle sits on the "links/rechts" side as labelled
+        const apexX  = handleLeft ? bx0+pad : bx1-pad;   // handle/apex side
+        const baseX  = handleLeft ? bx1-pad : bx0+pad;   // hinge side
+
+        // ---- DRAAI (side-hung): apex at handle stile, opens toward hinge stile
+        if (opening.startsWith('draai') || opening.startsWith('dk')){
+          inner += `<path d="M${apexX} ${cym} L${baseX} ${iy0+pad} M${apexX} ${cym} L${baseX} ${iy1-pad}" fill="none" ${stroke} opacity="0.75"/>`;
+        }
+
+        // ---- KIEP (bottom-hung, tilts in at top): shares the same apex point
+        //      at the handle, fanning up to the two TOP corners.
+        if (opening.startsWith('kiep') || opening.startsWith('dk')){
+          inner += `<path d="M${apexX} ${cym} L${bx0+pad} ${iy0+pad} M${apexX} ${cym} L${bx1-pad} ${iy0+pad}" fill="none" ${stroke} opacity="0.55"/>`;
+        }
+
+        // ---- HANDLE (greep): drawn exactly AT the apex point.
+        const handleColor = state.mat==='alu' ? '#3A4653' : '#0F1420';
+        const rosetteR = Math.max(2.4, fw*0.42);
+        const leverLen = Math.max(9, drawH*0.055);
+        const hx = handleLeft ? bx0 + fw*0.55 : bx1 - fw*0.55;  // at the apex stile
+        const hy = cym;
+        inner += `<circle cx="${hx}" cy="${hy}" r="${rosetteR}" fill="${handleColor}"/>`;
+        inner += `<rect x="${hx-rosetteR*0.5}" y="${hy}" width="${rosetteR}" height="${leverLen}" rx="${rosetteR*0.5}" fill="${handleColor}"/>`;
+      }
+      cx += cw;
+    });
+
+    // dimension lines
+    const dy = y0-16;
+    inner += `<line x1="${x0}" y1="${dy}" x2="${x1}" y2="${dy}" stroke="#9AA3AE" stroke-width="1"/>`;
+    inner += `<line x1="${x0}" y1="${dy-4}" x2="${x0}" y2="${dy+4}" stroke="#9AA3AE" stroke-width="1"/>`;
+    inner += `<line x1="${x1}" y1="${dy-4}" x2="${x1}" y2="${dy+4}" stroke="#9AA3AE" stroke-width="1"/>`;
+    inner += `<text x="${(x0+x1)/2}" y="${dy-6}" fill="#75808F" font-size="10" font-family="IBM Plex Mono, monospace" text-anchor="middle">${state.width} mm</text>`;
+
+    const dx = x0-16;
+    inner += `<line x1="${dx}" y1="${y0}" x2="${dx}" y2="${y1}" stroke="#9AA3AE" stroke-width="1"/>`;
+    inner += `<line x1="${dx-4}" y1="${y0}" x2="${dx+4}" y2="${y0}" stroke="#9AA3AE" stroke-width="1"/>`;
+    inner += `<line x1="${dx-4}" y1="${y1}" x2="${dx+4}" y2="${y1}" stroke="#9AA3AE" stroke-width="1"/>`;
+    inner += `<text x="${dx-8}" y="${(y0+y1)/2}" fill="#75808F" font-size="10" font-family="IBM Plex Mono, monospace" text-anchor="middle" transform="rotate(-90 ${dx-8} ${(y0+y1)/2})">${state.height} mm</text>`;
+
+    document.getElementById(artId).innerHTML = inner;
+  }
+
+  // ---------------- tiers ----------------
+  function renderTiers(){
+    const list = TIERS[state.mat];
+    $('tierList').innerHTML = list.map(t=>{
+      const price = tierPrice(t);
+      const low = price*(1-RANGE_SPREAD), high = price*(1+RANGE_SPREAD);
+      return `
+      <div class="kzw-tier ${t.id===state.tier?'active':''}" data-tier="${t.id}" tabindex="0" role="button" aria-pressed="${t.id===state.tier}">
+        <div class="kzw-tier-left">
+          <span class="kzw-tier-badge">${t.label}</span>
+          <span class="kzw-tier-brand">${t.brand}</span>
+        </div>
+        <div>
+          <div class="kzw-tier-price">${fmtEuro(low)} – ${fmtEuro(high)}</div>
+          <div class="kzw-tier-unit">per stuk · excl. montage &amp; btw</div>
+        </div>
+        <div class="kzw-tier-check"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>`;
+    }).join('');
+    $('tierList').querySelectorAll('.kzw-tier').forEach(el=>{
+      const pick = ()=>{ state.tier = el.dataset.tier; renderTiers(); };
+      el.addEventListener('click', pick);
+      el.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); pick(); } });
+    });
+  }
+
+  // ---------------- master update ----------------
+  function updateAll(){
+    const m2 = currentM2();
+    $('widthLbl').textContent = state.width;
+    $('heightLbl').textContent = state.height;
+    $('m2Interior').textContent = m2.toFixed(2).replace('.',',')+' m²';
+    $('m2Exterior').textContent = m2.toFixed(2).replace('.',',')+' m²';
+    $('sumW').textContent = state.width;
+    $('sumH').textContent = state.height;
+    $('sumM2').textContent = m2.toFixed(2).replace('.',',');
+
+    drawView('svgInterior','artInterior', true);
+    drawView('svgExterior','artExterior', false);
+    renderTiers();
+  }
+
+  // ---------------- view tabs ----------------
+  document.querySelectorAll('.kzw-viewtab').forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      document.querySelectorAll('.kzw-viewtab').forEach(t=>{ t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+      tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+      const v = tab.dataset.view;
+      $('cardInterior').classList.toggle('hide', v!=='interior');
+      $('cardExterior').classList.toggle('hide', v!=='exterior');
+    });
+  });
+
+  // ---------------- event wiring ----------------
+  $('matGroup').addEventListener('click', e=>{
+    const b=e.target.closest('.kzw-pill'); if(!b) return;
+    $('matGroup').querySelectorAll('.kzw-pill').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active'); state.mat=b.dataset.mat;
+    if(!TIERS[state.mat].find(t=>t.id===state.tier)) state.tier='standaard';
+    updateAll();
+  });
+  $('typeGroup').addEventListener('click', e=>{
+    const b=e.target.closest('.kzw-pill'); if(!b) return;
+    $('typeGroup').querySelectorAll('.kzw-pill').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active'); state.type=b.dataset.type; updateAll();
+  });
+  $('glassGroup').addEventListener('click', e=>{
+    const b=e.target.closest('.kzw-pill'); if(!b) return;
+    $('glassGroup').querySelectorAll('.kzw-pill').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active'); state.glass=b.dataset.glass; updateAll();
+  });
+  $('extrasGroup').querySelectorAll('.kzw-check').forEach(chk=>{
+    chk.addEventListener('click', ()=>{
+      const key = chk.dataset.extra;
+      state.extras[key] = !state.extras[key];
+      chk.classList.toggle('on', state.extras[key]);
+      chk.querySelector('input').checked = state.extras[key];
+      updateAll();
+    });
+  });
+  $('colorGroup').addEventListener('click', e=>{
+    const b=e.target.closest('.kzw-pill'); if(!b) return;
+    $('colorGroup').querySelectorAll('.kzw-pill').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active'); state.color=b.dataset.color;
+    $('colorHint').textContent = {
+      wit:'Kernkleur: wit, door-en-door.',
+      ral:'Kernkleur naar keuze uit het RAL-waaier, door-en-door gekleurd.',
+      folie:'Folie met houtnerf-structuur, buiten- en/of binnenzijde.'
+    }[state.color];
+    updateAll();
+  });
+
+  function syncRange(numId, rangeId, key){
+    const num=$(numId), range=$(rangeId);
+    num.addEventListener('input', ()=>{
+      let v = Math.max(+num.min, Math.min(+num.max, +num.value||+num.min));
+      state[key]=v; range.value=v; updateAll();
+    });
+    range.addEventListener('input', ()=>{
+      state[key]=+range.value; num.value=range.value; updateAll();
+    });
+  }
+  syncRange('widthNum','widthRange','width');
+  syncRange('heightNum','heightRange','height');
+
+  $('addPosBtn').addEventListener('click', ()=>{
+    const tierCfg = TIERS[state.mat].find(t=>t.id===state.tier);
+    const price = tierPrice(tierCfg);
+    positions.push({
+      type:state.type, mat:state.mat, width:state.width, height:state.height,
+      division:divisionCfg().label, tier:tierCfg.label, brand:tierCfg.brand, price
+    });
+    renderPositions();
+  });
+
+  function renderPositions(){
+    const list=$('posList');
+    if(positions.length===0){
+      list.innerHTML='<div class="kzw-empty">Nog geen posities toegevoegd.</div>';
+      $('posTotal').style.display='none';
+      return;
+    }
+    list.innerHTML = positions.map((p,i)=>`
+      <div class="kzw-pos-item">
+        <span><b>${typeLabel(p.type)}</b> · ${matLabel(p.mat)} · ${p.width}×${p.height}mm · ${p.division} · ${p.tier}</span>
+        <span class="kzw-pos-price">${fmtEuro(p.price)} <button class="kzw-pos-remove" data-i="${i}" aria-label="Positie verwijderen">×</button></span>
+      </div>
+    `).join('');
+    list.querySelectorAll('.kzw-pos-remove').forEach(b=>{
+      b.addEventListener('click', ()=>{ positions.splice(+b.dataset.i,1); renderPositions(); });
+    });
+    const total = positions.reduce((a,p)=>a+p.price,0);
+    $('posTotal').style.display='flex';
+    $('posCount').textContent = positions.length;
+    $('posTotalVal').textContent = fmtEuro(total);
+  }
+
+  $('requestBtn').addEventListener('click', ()=>{
+    $('quoteBlock').classList.add('open');
+    $('quoteBlock').scrollIntoView({behavior:'smooth', block:'start'});
+  });
+  $('sendQuoteBtn').addEventListener('click', ()=>{
+    // Vervang door uw eigen endpoint (e-mail service, CRM, backend, enz.)
+    // fetch('/api/offerte', {method:'POST', body: JSON.stringify({positions, ...})})
+    $('sentMsg').classList.add('show');
+  });
+
+  renderDivisionGrid();
+  renderBayList();
+  updateAll();
+})();
+</script>
+
+</body>
+</html>
