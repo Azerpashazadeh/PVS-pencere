@@ -19,7 +19,7 @@
   /* ============================================================
      DESIGN TOKENS — Light theme
      Zachte, lichte achtergrond met frosted-white panelen en een
-     koperkleurig accent. Rustig voor de ogen, hoog contrast.
+     groen accent. Rustig voor de ogen, hoog contrast.
      ============================================================ */
   :root{
     --bg-0:#EEF2F7;
@@ -642,7 +642,6 @@
       <p data-i18n="products.lead">Twee materiaalfamilies, eindeloos veel mogelijkheden.</p>
     </div>
     <div class="prod-grid">
-      <!-- PVC card -->
       <div class="prod-card glass glass-hover reveal">
         <div class="img-placeholder" data-slot="pvc-product-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
@@ -661,7 +660,6 @@
           <a href="#calc" class="btn btn-glass" data-i18n="products.more">Vraag richtprijs aan</a>
         </div>
       </div>
-      <!-- ALU card -->
       <div class="prod-card glass glass-hover reveal">
         <div class="img-placeholder" data-slot="aluminyum-product-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
@@ -711,7 +709,6 @@
     <div class="config-shell">
       <div class="kzw reveal">
   <div class="kzw-body">
-    <!-- ============ DRAWING SIDE ============ -->
     <div class="kzw-draw">
       <div class="kzw-viewtabs" role="tablist" aria-label="Aanzicht">
         <button class="kzw-viewtab active" data-view="interior" role="tab" aria-selected="true" data-i18n="calcui.viewInterior">Binnenaanzicht</button>
@@ -731,7 +728,6 @@
         <div class="kzw-dimcell"><span class="k" data-i18n="calcui.dOppervlak">Oppervlak</span><span class="v" id="sumM2">—</span><span class="u">m²</span></div>
       </div>
     </div>
-    <!-- ============ FORM SIDE ============ -->
     <div class="kzw-form">
       <div class="kzw-step">
         <div class="kzw-step-t"><span class="kzw-step-n">1</span><span data-i18n="calcui.stMateriaal">Materiaal</span></div>
@@ -834,12 +830,10 @@
     <span data-i18n="calcui.footRicht">Richtprijs excl. montage &amp; btw</span>
   </div>
       </div>
-      <!-- disclaimer -->
       <div class="config-disclaimer reveal">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#158049" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="13"/><circle cx="12" cy="16.5" r="0.5" fill="#158049"/></svg>
         <span data-i18n="calc.disclaimer">Dit is een indicatieve prijs en geen bindende offerte.</span>
       </div>
-      <!-- LEAD CAPTURE FORM -->
       <div class="lead glass reveal">
         <h3 data-i18n="calc.leadTitle">Ontvang uw persoonlijke offerte</h3>
         <p data-i18n="calc.leadDesc">Vul uw gegevens in en wij nemen contact op.</p>
@@ -860,9 +854,7 @@
     </div>
   </div>
 </section>
-<!-- ============================================================
-     GALLERY / PROJECTS
-     ============================================================ -->
+<!-- GALLERY -->
 <section class="section" id="gallery">
   <div class="wrap">
     <div class="section-head reveal">
@@ -889,9 +881,7 @@
     </div>
   </div>
 </section>
-<!-- ============================================================
-     ABOUT
-     ============================================================ -->
+<!-- ABOUT -->
 <section class="section" id="about">
   <div class="wrap about-grid">
     <div class="about-txt reveal">
@@ -913,9 +903,7 @@
     </div>
   </div>
 </section>
-<!-- ============================================================
-     SERVICES / PROCES
-     ============================================================ -->
+<!-- SERVICES -->
 <section class="section" id="services">
   <div class="wrap">
     <div class="section-head center reveal">
@@ -929,7 +917,6 @@
       <div class="serv glass glass-hover reveal"><div class="serv-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M14.7 6.3a4 4 0 00-5.4 5.4l-6.6 6.6 2 2 6.6-6.6a4 4 0 005.4-5.4l-2.5 2.5-2-2z"/></svg></div><h4 data-i18n="services.s3t">Montage</h4><p data-i18n="services.s3d">Vakkundige plaatsing door eigen team.</p></div>
       <div class="serv glass glass-hover reveal"><div class="serv-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.6 1.6 0 00-2.7 1.1V21a2 2 0 11-4 0v-.1A1.6 1.6 0 006 19.4l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.6 1.6 0 00-1.1-2.7H2a2 2 0 110-4h.1A1.6 1.6 0 004.6 6l-.1-.1a2 2 0 112.8-2.8l.1.1a1.6 1.6 0 001.8.3H9a1.6 1.6 0 001-1.5V2a2 2 0 114 0v.1a1.6 1.6 0 001 1.5 1.6 1.6 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.6 1.6 0 00-.3 1.8V9a1.6 1.6 0 001.5 1H22a2 2 0 110 4h-.1a1.6 1.6 0 00-1.5 1z"/></svg></div><h4 data-i18n="services.s4t">Service &amp; onderhoud</h4><p data-i18n="services.s4d">Nazorg en onderhoud, ook na oplevering.</p></div>
     </div>
-    <!-- CTA band -->
     <div class="cta-band reveal" style="margin-top:64px;">
       <h2 data-i18n="cta.title">Klaar om te beginnen?</h2>
       <p data-i18n="cta.lead">Bereken vandaag nog een richtprijs of plan een gratis opmeting in.</p>
@@ -937,9 +924,7 @@
     </div>
   </div>
 </section>
-<!-- ============================================================
-     CONTACT
-     ============================================================ -->
+<!-- CONTACT -->
 <section class="section" id="contact">
   <div class="wrap">
     <div class="section-head reveal">
@@ -979,9 +964,7 @@
     </div>
   </div>
 </section>
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
+<!-- FOOTER -->
 <footer>
   <div class="wrap">
     <div class="foot-shell">
@@ -1025,9 +1008,7 @@
     </div>
   </div>
 </footer>
-<!-- ============================================================
-     LEGAL MODALS
-     ============================================================ -->
+<!-- LEGAL MODALS -->
 <div class="modal" id="modal-privacy" data-modal-box>
   <div class="modal-box">
     <div class="modal-head"><h3 data-i18n="legal.privacyT">Privacyverklaring</h3><button class="modal-close" data-close>×</button></div>
@@ -1091,10 +1072,7 @@
     </div>
   </div>
 </div>
-<!-- ============================================================
-     ÖDEME SAYFASI (İLERİDE AKTİF EDİLECEK): /ode/{referans_kodu}
-     Görmek için URL'ye #odeme-demo ekleyin.
-     ============================================================ -->
+<!-- ÖDEME (DEMO): #odeme-demo -->
 <section class="section hidden" id="odeme-demo">
   <div class="wrap">
     <div class="section-head center">
@@ -1122,22 +1100,8 @@
     <button class="btn btn-glass" id="cookieReject" data-i18n="cookie.reject">Weigeren</button>
   </div>
 </div>
-<!-- ============================================================
-     GÖRSEL SLOTLARI LİSTESİ (kontrol listesi — ileride doldurulacak):
-     hero-background,
-     pvc-product-card, aluminyum-product-card,
-     glass-1, glass-2, glass-3,
-     color-1, color-2, color-3, color-4,
-     gallery-1 … gallery-9,
-     testimonial-1-avatar, testimonial-2-avatar, testimonial-3-avatar,
-     team-photo, google-map
-     ============================================================ -->
 <!-- ============ SCRIPTS ============ -->
 <script>
-/* ============================================================
-   ÇEVİRİ SİSTEMİ — 4 dil (NL varsayılan, TR / EN / DE)
-   Tüm metinler data-i18n="key" ile eşleşir.
-   ============================================================ */
 const translations = {
   nl: {
     meta:{title:"Kozijnexpert — PVC & Aluminium Kozijnen en Deuren", description:"Kwaliteitskozijnen en deuren in PVC en aluminium. Productie en montage door eigen team. Vraag direct een richtprijs aan."},
@@ -1590,70 +1554,6 @@ const translations = {
 };
 </script>
 <script>
-/* FOOTER / İLETİŞİM VERİSİ — GitHub'daki JSON dosyalarından çeker */
-(function(){
-  const FOOTER_BASE = "https://cdn.jsdelivr.net/gh/Azerpashazadeh/PVS-pencere@main";
-  let footerData = null;
-
-  function replaceBrackets(selector, values){
-    const el = document.querySelector(selector);
-    if(!el) return;
-    let i = 0;
-    el.textContent = el.textContent.replace(/\[[^\]]*\]/g, () => (values[i++] ?? ''));
-  }
-
-  function setText(selector, value){
-    const el = document.querySelector(selector);
-    if(el && value) el.textContent = value;
-  }
-
-  async function loadFooterData(){
-    try{
-      const [company, legal, social] = await Promise.all([
-        fetch(FOOTER_BASE + "/company.json").then(r=>r.json()),
-        fetch(FOOTER_BASE + "/legal.json").then(r=>r.json()),
-        fetch(FOOTER_BASE + "/social.json").then(r=>r.json())
-      ]);
-      footerData = { company, legal, social };
-      window.applyFooterData();
-    }catch(err){
-      console.error("Footer verisi GitHub'dan alınamadı:", err);
-    }
-  }
-
-  window.applyFooterData = function(){
-    if(!footerData) return;
-    const { company, legal, social } = footerData;
-
-    const aboutEl = document.querySelector('[data-i18n="footer.about"]');
-    if(aboutEl && company.description) aboutEl.textContent = company.description;
-
-    replaceBrackets('[data-i18n="footer.legalLine"]', [legal.firmaAdi, legal.kvk, legal.btw]);
-
-    const socialLinks = document.querySelectorAll('.socials a');
-    if(socialLinks[0] && social.facebook) socialLinks[0].href = social.facebook;
-    if(socialLinks[1] && social.instagram) socialLinks[1].href = social.instagram;
-    if(socialLinks[2] && social.linkedin) socialLinks[2].href = social.linkedin;
-
-    replaceBrackets('[data-i18n="legal.kvk1p"]', [legal.firmaAdi]);
-    replaceBrackets('[data-i18n="legal.kvkNr"]', [legal.kvk]);
-    replaceBrackets('[data-i18n="legal.btwNr"]', [legal.btw]);
-    replaceBrackets('[data-i18n="legal.privacy4p"]', [legal.firmaAdi, legal.email]);
-
-    setText('[data-i18n="contact.addrV"]', legal.adres);
-    setText('[data-i18n="contact.phoneV"]', legal.telefon);
-    setText('[data-i18n="contact.emailV"]', legal.email);
-    setText('[data-i18n="contact.waV"]', legal.whatsapp);
-  };
-
-  loadFooterData();
-})();
-</script>
-<script>
-/* ============================================================
-   SITE JS — dil sistemi, navigasyon, modallar, çerez, form,
-   scroll-reveal (prefers-reduced-motion'a saygılı)
-   ============================================================ */
 (function(){
   const LANGS = ['nl','en','de','tr'];
   const FLAGS = {nl:'🇳🇱', en:'🇬🇧', de:'🇩🇪', tr:'🇹🇷'};
@@ -1686,10 +1586,8 @@ const translations = {
     document.querySelectorAll('.lang-menu button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
     document.querySelectorAll('[data-i18n-ph]').forEach(el=>{ const pv=deepGet(dict, el.getAttribute('data-i18n-ph')); if(pv!==undefined) el.setAttribute('placeholder', pv); });
     if(window.kzwApplyLang) window.kzwApplyLang(lang);
-    if(window.applyFooterData) window.applyFooterData();
     try{ localStorage.setItem('kzw_lang', lang); }catch(e){}
   }
-  // dil menüsü
   const lang = document.getElementById('lang');
   const langBtn = document.getElementById('langBtn');
   if(langBtn){
@@ -1699,14 +1597,12 @@ const translations = {
     });
     document.addEventListener('click', ()=> lang.classList.remove('open'));
   }
-  // hamburger / mobile nav
   const burger = document.getElementById('burger');
   const mobileNav = document.getElementById('mobileNav');
   if(burger){
     burger.addEventListener('click', ()=>{ burger.classList.toggle('open'); mobileNav.classList.toggle('open'); });
     mobileNav.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=>{ burger.classList.remove('open'); mobileNav.classList.remove('open'); }));
   }
-  // scroll-reveal
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const revealEls = document.querySelectorAll('.reveal');
   if(reduced || !('IntersectionObserver' in window)){
@@ -1717,7 +1613,6 @@ const translations = {
     }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
     revealEls.forEach(el=>io.observe(el));
   }
-  // modals
   document.querySelectorAll('[data-modal]').forEach(t=>{
     t.addEventListener('click', ()=>{
       const m=document.getElementById('modal-'+t.dataset.modal);
@@ -1729,7 +1624,6 @@ const translations = {
     const c=m.querySelector('[data-close]'); if(c) c.addEventListener('click', ()=> m.classList.remove('open'));
   });
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') document.querySelectorAll('.modal.open').forEach(m=>m.classList.remove('open')); });
-  // cookie banner
   const cookie = document.getElementById('cookieBanner');
   try{
     if(!localStorage.getItem('kzw_cookie')) setTimeout(()=> cookie.classList.add('show'), 800);
@@ -1738,11 +1632,8 @@ const translations = {
   const ca=document.getElementById('cookieAccept'), cr=document.getElementById('cookieReject');
   if(ca) ca.addEventListener('click', ()=> setCookie('accepted'));
   if(cr) cr.addEventListener('click', ()=> setCookie('rejected'));
-  // year
   const y=document.getElementById('year'); if(y) y.textContent = new Date().getFullYear();
-  // ---- form validation ----
   function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
-  // lead form (configurator)
   const leadSubmit = document.getElementById('leadSubmit');
   if(leadSubmit){
     leadSubmit.addEventListener('click', ()=>{
@@ -1753,12 +1644,10 @@ const translations = {
       if(!validEmail(email.value)){ email.classList.add('err'); ok=false; }
       if(!consent.checked){ ok=false; }
       if(!ok) return;
-      // TODO: Supabase POST burada
       document.getElementById('leadSuccess').classList.add('show');
       leadSubmit.style.display='none';
     });
   }
-  // contact form
   const contactSubmit = document.getElementById('contactSubmit');
   if(contactSubmit){
     contactSubmit.addEventListener('click', ()=>{
@@ -1768,26 +1657,17 @@ const translations = {
       if(!name.value.trim()){ name.classList.add('err'); ok=false; }
       if(!validEmail(email.value)){ email.classList.add('err'); ok=false; }
       if(!ok) return;
-      // TODO: Supabase POST burada
       document.getElementById('contactSuccess').classList.add('show');
       contactSubmit.style.display='none';
     });
   }
-  // payment demo görünürlüğü (#odeme-demo hash ile)
   function checkPayDemo(){ if(location.hash==='#odeme-demo'){ const el=document.getElementById('odeme-demo'); if(el) el.classList.remove('hidden'); } }
   window.addEventListener('hashchange', checkPayDemo); checkPayDemo();
-  // ilk dili uygula
   applyLang(getInitialLang());
 })();
 </script>
 <script>
-/* CONFIGURATOR (gömülü — kendi IIFE kapsamında)
-   Çizim renkleri açık (light) glass temaya uyarlandı. */
 (function(){
-  // CONFIGURATIE — pas aan naar uw eigen inkoopprijzen, marges
-  // en de profielsystemen die uw fabriek daadwerkelijk voert.
-  // Alle basisprijzen zijn per m².
-  // ============================================================
   const TIERS = {
     pvc: [
       {id:'voordelig', label:'Voordelig', brand:'Profielsysteem A · 70mm', base:230},
@@ -1833,7 +1713,6 @@ const translations = {
   let CUR_LANG = (function(){ var l=document.documentElement.lang; return (translations[l]&&translations[l].calcui)?l:'nl'; })();
   function T(){ return translations[CUR_LANG].calcui; }
   const $ = (id)=>document.getElementById(id);
-  // ---------------- helpers ----------------
   function fmtEuro(n){ return '€ ' + Math.round(n).toLocaleString('nl-NL'); }
   function typeLabel(t){ return {raam:T().tRaam,deur:T().tDeur,schuifpui:T().tSchuif,vouwdeur:T().tVouw}[t]; }
   function matLabel(m){ return {pvc:T().matPvc, alu:T().matAlu}[m]; }
@@ -1855,7 +1734,6 @@ const translations = {
     price = Math.max(price, MIN_PRICE[state.mat]);
     return price;
   }
-  // ---------------- division mini icons ----------------
   function divisionIconSVG(cols, active){
     const w=64,h=30,pad=2;
     const total = cols.reduce((a,b)=>a+b,0);
@@ -1904,7 +1782,6 @@ const translations = {
       });
     });
   }
-  // ---------------- technical drawing (light theme) ----------------
   function drawView(svgId, artId, mirror){
     const svgW=340, svgH=300;
     const marginTop=34, marginLeft=44, marginRight=26, marginBottom=26;
@@ -1931,26 +1808,20 @@ const translations = {
       inner += `<rect x="${bx0}" y="${iy0}" width="${bx1-bx0}" height="${iy1-iy0}" fill="${glassFill}" stroke="${frameColor}" stroke-width="1.2"/>`;
       const opening = bays[i] || 'vast';
       if (opening !== 'vast'){
-        // "links"/"rechts" is defined from the OUTSIDE (buitenaanzicht),
-        // per NL/DIN convention. Interior view is the mirror image.
         let hingeLeft = opening.includes('links');
         if (mirror) hingeLeft = !hingeLeft;
         const cxm = (bx0+bx1)/2, cym = (iy0+iy1)/2;
         const pad = 3;
         const stroke = `stroke="${frameColor}" stroke-width="1" stroke-dasharray="4 3"`;
-        // Dashed triangles CONVERGE at the HANDLE (apex = handle side).
         const handleLeft = hingeLeft;
         const apexX  = handleLeft ? bx0+pad : bx1-pad;
         const baseX  = handleLeft ? bx1-pad : bx0+pad;
-        // ---- DRAAI (side-hung)
         if (opening.startsWith('draai') || opening.startsWith('dk')){
           inner += `<path d="M${apexX} ${cym} L${baseX} ${iy0+pad} M${apexX} ${cym} L${baseX} ${iy1-pad}" fill="none" ${stroke} opacity="0.8"/>`;
         }
-        // ---- KIEP (bottom-hung, tilts in at top)
         if (opening.startsWith('kiep') || opening.startsWith('dk')){
           inner += `<path d="M${apexX} ${cym} L${bx0+pad} ${iy0+pad} M${apexX} ${cym} L${bx1-pad} ${iy0+pad}" fill="none" ${stroke} opacity="0.55"/>`;
         }
-        // ---- HANDLE (greep) at the apex point
         const handleColor = '#158049';
         const rosetteR = Math.max(2.4, fw*0.42);
         const leverLen = Math.max(9, drawH*0.055);
@@ -1961,7 +1832,6 @@ const translations = {
       }
       cx += cw;
     });
-    // dimension lines
     const dimC = 'rgba(27,39,64,0.38)';
     const dimT = 'rgba(27,39,64,0.66)';
     const dy = y0-16;
@@ -1976,7 +1846,6 @@ const translations = {
     inner += `<text x="${dx-8}" y="${(y0+y1)/2}" fill="${dimT}" font-size="10" font-family="IBM Plex Mono, monospace" text-anchor="middle" transform="rotate(-90 ${dx-8} ${(y0+y1)/2})">${state.height} mm</text>`;
     document.getElementById(artId).innerHTML = inner;
   }
-  // ---------------- tiers ----------------
   function renderTiers(){
     const list = TIERS[state.mat];
     $('tierList').innerHTML = list.map(t=>{
@@ -2001,7 +1870,6 @@ const translations = {
       el.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); pick(); } });
     });
   }
-  // ---------------- master update ----------------
   function updateAll(){
     const m2 = currentM2();
     $('widthLbl').textContent = state.width;
@@ -2015,7 +1883,6 @@ const translations = {
     drawView('svgExterior','artExterior', false);
     renderTiers();
   }
-  // ---------------- view tabs ----------------
   document.querySelectorAll('.kzw-viewtab').forEach(tab=>{
     tab.addEventListener('click', ()=>{
       document.querySelectorAll('.kzw-viewtab').forEach(t=>{ t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
@@ -2025,7 +1892,6 @@ const translations = {
       $('cardExterior').classList.toggle('hide', v!=='exterior');
     });
   });
-  // ---------------- event wiring ----------------
   $('matGroup').addEventListener('click', e=>{
     const b=e.target.closest('.kzw-pill'); if(!b) return;
     $('matGroup').querySelectorAll('.kzw-pill').forEach(x=>x.classList.remove('active'));
@@ -2106,8 +1972,6 @@ const translations = {
     $('quoteBlock').scrollIntoView({behavior:'smooth', block:'start'});
   });
   $('sendQuoteBtn').addEventListener('click', ()=>{
-    // Vervang door uw eigen endpoint (e-mail service, CRM, backend, enz.)
-    // fetch('/api/offerte', {method:'POST', body: JSON.stringify({positions, ...})})
     $('sentMsg').classList.add('show');
   });
   window.kzwApplyLang = function(lang){
