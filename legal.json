@@ -1,7 +1,10 @@
 {
-  "firmaAdi": "[azerin firmasi]",
-  "kvk": "[42011186]",
-  "btw": "[308579811B01]",
+  "firmaAdi": "[FİRMA ADI]",
+  "kvk": "[KVK NUMARASI]",
+  "btw": "[BTW NUMARASI]",
   "adres": "Zutphen, Hollanda",
+  "telefon": "[TELEFON NUMARASI]",
+  "email": "[E-POSTA ADRESİ]",
+  "whatsapp": "[WHATSAPP NUMARASI]",
   "telifYili": "2026"
 }
