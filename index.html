@@ -1590,6 +1590,66 @@ const translations = {
 };
 </script>
 <script>
+/* FOOTER / İLETİŞİM VERİSİ — GitHub'daki JSON dosyalarından çeker */
+(function(){
+  const FOOTER_BASE = "https://cdn.jsdelivr.net/gh/Azerpashazadeh/PVS-pencere@main";
+  let footerData = null;
+
+  function replaceBrackets(selector, values){
+    const el = document.querySelector(selector);
+    if(!el) return;
+    let i = 0;
+    el.textContent = el.textContent.replace(/\[[^\]]*\]/g, () => (values[i++] ?? ''));
+  }
+
+  function setText(selector, value){
+    const el = document.querySelector(selector);
+    if(el && value) el.textContent = value;
+  }
+
+  async function loadFooterData(){
+    try{
+      const [company, legal, social] = await Promise.all([
+        fetch(FOOTER_BASE + "/company.json").then(r=>r.json()),
+        fetch(FOOTER_BASE + "/legal.json").then(r=>r.json()),
+        fetch(FOOTER_BASE + "/social.json").then(r=>r.json())
+      ]);
+      footerData = { company, legal, social };
+      window.applyFooterData();
+    }catch(err){
+      console.error("Footer verisi GitHub'dan alınamadı:", err);
+    }
+  }
+
+  window.applyFooterData = function(){
+    if(!footerData) return;
+    const { company, legal, social } = footerData;
+
+    const aboutEl = document.querySelector('[data-i18n="footer.about"]');
+    if(aboutEl && company.description) aboutEl.textContent = company.description;
+
+    replaceBrackets('[data-i18n="footer.legalLine"]', [legal.firmaAdi, legal.kvk, legal.btw]);
+
+    const socialLinks = document.querySelectorAll('.socials a');
+    if(socialLinks[0] && social.facebook) socialLinks[0].href = social.facebook;
+    if(socialLinks[1] && social.instagram) socialLinks[1].href = social.instagram;
+    if(socialLinks[2] && social.linkedin) socialLinks[2].href = social.linkedin;
+
+    replaceBrackets('[data-i18n="legal.kvk1p"]', [legal.firmaAdi]);
+    replaceBrackets('[data-i18n="legal.kvkNr"]', [legal.kvk]);
+    replaceBrackets('[data-i18n="legal.btwNr"]', [legal.btw]);
+    replaceBrackets('[data-i18n="legal.privacy4p"]', [legal.firmaAdi, legal.email]);
+
+    setText('[data-i18n="contact.addrV"]', legal.adres);
+    setText('[data-i18n="contact.phoneV"]', legal.telefon);
+    setText('[data-i18n="contact.emailV"]', legal.email);
+    setText('[data-i18n="contact.waV"]', legal.whatsapp);
+  };
+
+  loadFooterData();
+})();
+</script>
+<script>
 /* ============================================================
    SITE JS — dil sistemi, navigasyon, modallar, çerez, form,
    scroll-reveal (prefers-reduced-motion'a saygılı)
@@ -1626,6 +1686,7 @@ const translations = {
     document.querySelectorAll('.lang-menu button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
     document.querySelectorAll('[data-i18n-ph]').forEach(el=>{ const pv=deepGet(dict, el.getAttribute('data-i18n-ph')); if(pv!==undefined) el.setAttribute('placeholder', pv); });
     if(window.kzwApplyLang) window.kzwApplyLang(lang);
+    if(window.applyFooterData) window.applyFooterData();
     try{ localStorage.setItem('kzw_lang', lang); }catch(e){}
   }
   // dil menüsü
