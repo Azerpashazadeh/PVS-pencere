@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- Kozijnexpert v3 — Light theme redesign · 4 talen: NL / EN / DE / TR -->
+<!-- Kozijnendaal v3 — Light theme redesign · 4 talen: NL / EN / DE / TR -->
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n="meta.title">Kozijnexpert — PVC &amp; Aluminium Kozijnen en Deuren</title>
+<title data-i18n="meta.title">Kozijnendaal — PVC &amp; Aluminium Kozijnen en Deuren</title>
 <meta name="description" data-i18n="meta.description" content="Kwaliteitskozijnen en deuren in PVC en aluminium. Productie en montage door eigen team. Vraag direct een richtprijs aan.">
 <link rel="alternate" hreflang="nl" href="./index.html">
 <link rel="alternate" hreflang="en" href="./index.html">
@@ -529,7 +529,7 @@
       <span class="logo-mark">
         <svg width="19" height="19" viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="2.5" fill="none" stroke="#22A15D" stroke-width="2"/><line x1="10" y1="2" x2="10" y2="18" stroke="#22A15D" stroke-width="1.6"/></svg>
       </span>
-      Kozijnexpert
+      Kozijnendaal
     </a>
     <nav class="nav" aria-label="Hoofdnavigatie">
       <a href="#home" data-i18n="nav.home">Home</a>
@@ -970,7 +970,7 @@
     <div class="foot-shell">
       <div class="foot-grid">
         <div class="foot-brand">
-          <div class="logo"><span class="logo-mark"><svg width="19" height="19" viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="2.5" fill="none" stroke="#22A15D" stroke-width="2"/><line x1="10" y1="2" x2="10" y2="18" stroke="#22A15D" stroke-width="1.6"/></svg></span>Kozijnexpert</div>
+          <div class="logo"><span class="logo-mark"><svg width="19" height="19" viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="2.5" fill="none" stroke="#22A15D" stroke-width="2"/><line x1="10" y1="2" x2="10" y2="18" stroke="#22A15D" stroke-width="1.6"/></svg></span>Kozijnendaal</div>
           <p data-i18n="footer.about">Maatwerk kozijnen en deuren in PVC en aluminium.</p>
           <div class="socials">
             <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.5 2.9h-2.3v7A10 10 0 0022 12z"/></svg></a>
@@ -1003,7 +1003,7 @@
       </div>
       <div class="foot-bottom">
         <span data-i18n="footer.legalLine">[BEDRIJFSNAAM] · KVK [KVK NUMMER] · BTW [BTW NUMMER] · Zutphen, Nederland</span>
-        <span>© <span id="year">2026</span> Kozijnexpert · <span data-i18n="footer.rights">Alle rechten voorbehouden.</span></span>
+        <span>© <span id="year">2026</span> Kozijnendaal · <span data-i18n="footer.rights">Alle rechten voorbehouden.</span></span>
       </div>
     </div>
   </div>
@@ -1102,456 +1102,8 @@
 </div>
 <!-- ============ SCRIPTS ============ -->
 <script>
-const translations = {
-  nl: {
-    meta:{title:"Kozijnexpert — PVC & Aluminium Kozijnen en Deuren", description:"Kwaliteitskozijnen en deuren in PVC en aluminium. Productie en montage door eigen team. Vraag direct een richtprijs aan."},
-    nav:{home:"Home", products:"Producten", pvc:"PVC ramen & deuren", alu:"Aluminium systemen", calc:"Prijscalculator", gallery:"Projecten", about:"Over ons", services:"Diensten", contact:"Contact"},
-    hero:{
-      eyebrow:"PVC & Aluminium specialist",
-      title:"Kwaliteitskozijnen en deuren in heel Nederland",
-      lead:"Wij ontwerpen, produceren en monteren maatwerk kozijnen en deuren in PVC en aluminium. Vakwerk van eigen team, van opmeting tot afmontage.",
-      ctaCalc:"Bereken prijs", ctaContact:"Neem contact op",
-      stat1n:"[JAAR]+", stat1l:"jaar ervaring",
-      stat2n:"[AANTAL]+", stat2l:"afgeronde projecten",
-      stat3n:"CE", stat3l:"gecertificeerde producten",
-      stat4n:"100%", stat4l:"eigen montageteam",
-      chip1:"Gratis opmeting aan huis", chip2:"Richtprijs in 1 minuut",
-      phVisual:"Hero-afbeelding — aanbevolen formaat: 1920×1080px (kozijn/gevel referentie)"
-    },
-    usp:{
-      u1t:"CE-gecertificeerd", u1d:"Europese productnormen",
-      u2t:"Eigen montageteam", u2d:"Geen onderaannemers",
-      u3t:"Gratis opmeting", u3d:"Vrijblijvend advies",
-      u4t:"Snelle levertijd", u4d:"Heldere planning"
-    },
-    products:{
-      eyebrow:"Producten", title:"Onze systemen", lead:"Twee materiaalfamilies, eindeloos veel mogelijkheden — afgestemd op uw woning en budget.",
-      pvcTitle:"PVC ramen & deuren", pvcDesc:"Uitstekende isolatie tegen een scherpe prijs. Onderhoudsarm en beschikbaar in vele kleuren en houtnerf-folies.",
-      pvcF1:"Uitstekende warmte-isolatie", pvcF2:"Geluidwerend glas mogelijk", pvcF3:"Vele kleuren & folies", pvcF4:"Inbraakwerend hang- en sluitwerk",
-      aluTitle:"Aluminium systemen", aluDesc:"Strak, sterk en slank. Ideaal voor grote glaspartijen, schuifpuien en een moderne uitstraling.",
-      aluF1:"Zeer slanke profielen", aluF2:"Groot draagvermogen voor glas", aluF3:"Onderhoudsvrij & duurzaam", aluF4:"RAL-kleuren naar keuze",
-      more:"Vraag richtprijs aan",
-      glassTitle:"Beglazingsopties", glassP:"Van standaard HR++ tot triple beglazing met extra functies.",
-      colorTitle:"Kleuren & afwerking", colorP:"Wit, RAL-kernkleuren en realistische houtnerf-folies.",
-      phGlass:"Glasstaal / beglazingsdetail", phColor:"Kleurstaal / RAL-monster"
-    },
-    calc:{
-      eyebrow:"Prijscalculator", title:"Stel uw kozijn samen", lead:"Configureer tot in detail en bekijk direct een indicatieve richtprijs — inclusief tekening. Excl. montage en btw.",
-      disclaimer:"Dit is een indicatieve prijs en geen bindende offerte. De definitieve prijs ontvangt u na een opmeting ter plaatse, op maat gemaakt voor uw situatie.",
-      leadTitle:"Ontvang uw persoonlijke offerte", leadDesc:"Vul uw gegevens in en wij nemen contact op — inclusief tekening en scherpe prijs.",
-      fName:"Naam", fEmail:"E-mailadres", fPhone:"Telefoon", fAddress:"Adres (optioneel)",
-      consent:"Ik ga akkoord met het verwerken van mijn gegevens voor deze aanvraag.",
-      submit:"Verstuur offerteaanvraag",
-      success:"Uw aanvraag is ontvangen — we nemen zo snel mogelijk contact met u op.",
-      errName:"Vul uw naam in", errEmail:"Vul een geldig e-mailadres in", errConsent:"Akkoord is verplicht"
-    },
-    gallery:{
-      eyebrow:"Projecten", title:"Ons werk", lead:"Een greep uit recent opgeleverde projecten door heel Nederland.",
-      phProject:"Projectfoto — [PROJECTNAAM]", meta:"[Locatie, m², opleverdatum]",
-      testiTitle:"Wat klanten zeggen", testiTxt:"[Klantbeoordeling komt hier]", testiName:"[Klantnaam]", testiLoc:"[Plaats]"
-    },
-    about:{
-      eyebrow:"Over ons", title:"Vakmanschap uit Zutphen",
-      p1:"[Bedrijfsgeschiedenis komt hier — hoe en wanneer het bedrijf is opgericht, de visie van de oprichter en de groei door de jaren heen.]",
-      p2:"[Tweede alinea — waar het bedrijf voor staat: kwaliteit, betrouwbaarheid en persoonlijk contact met de klant.]",
-      p3:"[Derde alinea — het eigen productie- en montageteam, werkgebied en materialen.]",
-      missionT:"Onze missie", missionP:"[Missie-tekst: waarom we doen wat we doen.]",
-      visionT:"Onze visie", visionP:"[Visie-tekst: waar we naartoe werken.]",
-      phTeam:"Team- of werkplaatsfoto — aanbevolen formaat: 1200×800px"
-    },
-    services:{
-      eyebrow:"Diensten", title:"Van A tot Z geregeld", lead:"Eén aanspreekpunt voor het hele traject.",
-      s1t:"Gratis opmeting", s1d:"Wij komen langs, meten exact op en adviseren vrijblijvend.",
-      s2t:"Productie", s2d:"Maatwerk productie volgens uw configuratie en specificaties.",
-      s3t:"Montage", s3d:"Vakkundige plaatsing door ons eigen ervaren team.",
-      s4t:"Service & onderhoud", s4d:"Nazorg, afstelling en onderhoud, ook na oplevering."
-    },
-    cta:{title:"Klaar om te beginnen?", lead:"Bereken vandaag nog een richtprijs of plan een gratis opmeting in."},
-    contact:{
-      eyebrow:"Contact", title:"Neem contact op", lead:"Vragen of een offerte op maat? We horen graag van u.",
-      fName:"Naam", fEmail:"E-mailadres", fPhone:"Telefoon", fMsg:"Uw bericht", submit:"Verstuur bericht",
-      success:"Bedankt — uw bericht is verzonden.",
-      addrK:"Adres", addrV:"[ADRES], Zutphen", phoneK:"Telefoon", phoneV:"[TELEFOON]", emailK:"E-mail", emailV:"[E-MAIL]", waK:"WhatsApp", waV:"[WHATSAPP]",
-      phMap:"Google Maps wordt hier ingesloten"
-    },
-    footer:{
-      about:"Maatwerk kozijnen en deuren in PVC en aluminium. Productie en montage door eigen team, gevestigd in Zutphen.",
-      colProducts:"Producten", colCompany:"Bedrijf", colLegal:"Juridisch",
-      privacy:"Privacyverklaring", terms:"Algemene voorwaarden", cookies:"Cookiebeleid", kvk:"KVK & BTW", faq:"Veelgestelde vragen", warranty:"Garantie & herroeping",
-      legalLine:"[BEDRIJFSNAAM] · KVK [KVK NUMMER] · BTW [BTW NUMMER] · Zutphen, Nederland",
-      rights:"Alle rechten voorbehouden."
-    },
-    cookie:{text:"We gebruiken cookies om de website goed te laten werken en te verbeteren. U kunt zelf kiezen.", accept:"Accepteren", reject:"Weigeren"},
-    legal:{
-      privacyT:"Privacyverklaring",
-      privacy1:"Welke gegevens verzamelen wij", privacy1p:"Wij verzamelen naam, e-mailadres, telefoonnummer en (optioneel) adres wanneer u een offerte aanvraagt of contact opneemt.",
-      privacy2:"Waarom en hoe lang", privacy2p:"[Deze sectie wordt aangevuld: doel van verwerking en bewaartermijn, na juridische toetsing.]",
-      privacy3:"Uw rechten", privacy3p:"U heeft recht op inzage, correctie, verwijdering en bezwaar. Neem hiervoor contact op met de verwerkingsverantwoordelijke.",
-      privacy4:"Verwerkingsverantwoordelijke", privacy4p:"[BEDRIJFSNAAM], Zutphen — [E-MAIL].",
-      termsT:"Algemene voorwaarden",
-      terms1:"Bestelproces", terms1p:"[Deze sectie beschrijft het bestel- en offertetraject.]",
-      terms2:"Betaling & aanbetaling", terms2p:"[Betalingscondities en aanbetaling worden hier beschreven.]",
-      terms3:"Garantie", terms3p:"[Garantievoorwaarden worden hier beschreven.]",
-      terms4:"Annulering & levertijd", terms4p:"[Voorwaarden bij annulering en vertraging worden hier beschreven.]",
-      cookieT:"Cookiebeleid",
-      cookie1:"Wat zijn cookies", cookie1p:"[Uitleg over gebruikte cookies wordt hier aangevuld.]",
-      cookie2:"Welke cookies gebruiken wij", cookie2p:"[Functionele en analytische cookies worden hier beschreven.]",
-      kvkT:"KVK & BTW gegevens",
-      kvk1:"Bedrijfsgegevens", kvk1p:"[BEDRIJFSNAAM], gevestigd te Zutphen.", kvkNr:"KVK-nummer: [KVK NUMMER]", btwNr:"BTW-nummer: [BTW NUMMER]",
-      faqT:"Veelgestelde vragen",
-      faqQ1:"Hoe lang duurt de levering?", faqA1:"[Antwoord over levertijd wordt hier aangevuld.]",
-      faqQ2:"Is montage inbegrepen?", faqA2:"Montage kan worden inbegrepen; dit kiest u in de calculator en offerte.",
-      faqQ3:"Welke garantie krijg ik?", faqA3:"[Antwoord over garantie wordt hier aangevuld.]",
-      faqQ4:"Kan ik zelf de kleur kiezen?", faqA4:"Ja, wit, RAL-kernkleuren en houtnerf-folies zijn mogelijk.",
-      faqQ5:"Hoe wordt de prijs bepaald?", faqA5:"De calculator geeft een richtprijs; de definitieve prijs volgt na opmeting.",
-      faqQ6:"Werken jullie door heel Nederland?", faqA6:"[Antwoord over werkgebied wordt hier aangevuld.]",
-      warrantyT:"Garantie & herroepingsrecht",
-      warranty1:"Garantie", warranty1p:"[Garantievoorwaarden worden hier aangevuld na juridische toetsing.]",
-      warranty2:"Herroepingsrecht bij maatwerk", warranty2p:"Producten die op maat worden gemaakt volgens uw specificaties zijn uitgesloten van het wettelijke herroepingsrecht van 14 dagen, conform EU-regelgeving. Door akkoord te gaan met de offerte erkent u dit."
-    },
-    pay:{
-      note:"Betaalpagina (voorbeeld) — wordt later geactiveerd voor aanbetaling.",
-      quoteNo:"Offertenummer", amount:"Te betalen bedrag", fName:"Naam", fEmail:"E-mail", fAddress:"Adres", btn:"Betalen", locked:"vast"
-    },
-    calcui:{viewInterior:"Binnenaanzicht", viewExterior:"Buitenaanzicht", stMateriaal:"Materiaal", stType:"Type", stVerdeling:"Verdeling", stPerVak:"Per vak — vast of draaiend", stAfmetingen:"Afmetingen", stBeglazing:"Beglazing", stKleur:"Kleur & afwerking", stRichtprijs:"Richtprijs — kies uw uitvoering", stGegevens:"Uw gegevens", matPvc:"Kunststof (PVC)", matAlu:"Aluminium", tRaam:"Raam", tDeur:"Deur", tSchuif:"Schuifpui", tVouw:"Vouwdeur", lBreedte:"Breedte", lHoogte:"Hoogte", gHr:"HR++ (standaard)", gTriple:"Triple HR+++", eVeiligheid:"Veiligheidsglas (gelaagd)", eGeluid:"Geluidwerend glas", eZon:"Zonwerend glas", cWit:"Wit (inbegrepen)", cRal:"Kernkleur RAL", cFolie:"Folie met nerf", pricenote:"Indicatieve richtprijs per stuk, excl. montage & btw. De definitieve prijs hangt af van beslag, detaillering en opmeting ter plaatse.", addPos:"+ Positie toevoegen", requestBtn:"Offerte aanvragen", empty:"Nog geen posities toegevoegd.", totaal:"Totaal", posities:"posities", phNaam:"Naam", phEmail:"E-mailadres", phTel:"Telefoonnummer", phPostcode:"Postcode + plaats", phToelichting:"Toelichting (optioneel)", sendQuote:"Verstuur aanvraag", sentMsg:"✓ Verzonden — we nemen snel contact op, inclusief tekening.", footCe:"CE-gecertificeerde systemen", footEigen:"Eigen productie & montage", footRicht:"Richtprijs excl. montage & btw", dBreedte:"Breedte", dHoogte:"Hoogte", dOppervlak:"Oppervlak", perStuk:"per stuk · excl. montage & btw", vakLabel:"Vak", vak:"vak", vakken:"vakken", bVast:"Vast (niet draaiend)", bDkL:"Draaikiep links", bDkR:"Draaikiep rechts", bDraaiL:"Draai links", bDraaiR:"Draai rechts", tierVoordelig:"Voordelig", tierStandaard:"Standaard", tierPremium:"Premium", hintWit:"Kernkleur: wit, door-en-door.", hintRal:"Kernkleur naar keuze uit het RAL-waaier, door-en-door gekleurd.", hintFolie:"Folie met houtnerf-structuur, buiten- en/of binnenzijde."}
-  },
-  tr: {
-    meta:{title:"Kozijnexpert — PVC & Alüminyum Kapı ve Pencere", description:"PVC ve alüminyum kaliteli kapı ve pencere sistemleri. Kendi ekibimizle üretim ve montaj. Hemen tahmini fiyat alın."},
-    nav:{home:"Ana Sayfa", products:"Ürünler", pvc:"PVC Pencere & Kapı", alu:"Alüminyum Sistemler", calc:"Fiyat Hesaplayıcı", gallery:"Projeler", about:"Hakkımızda", services:"Hizmetler", contact:"İletişim"},
-    hero:{
-      eyebrow:"PVC & Alüminyum uzmanı",
-      title:"Hollanda genelinde kaliteli kapı ve pencere çözümleri",
-      lead:"PVC ve alüminyum ölçüye özel kapı ve pencereleri tasarlar, üretir ve monte ederiz. Ölçümden montaja kadar kendi ekibimizle, ustalıkla.",
-      ctaCalc:"Fiyat Hesapla", ctaContact:"Bize Ulaşın",
-      stat1n:"[YIL]+", stat1l:"yıl deneyim",
-      stat2n:"[SAYI]+", stat2l:"tamamlanmış proje",
-      stat3n:"CE", stat3l:"sertifikalı ürünler",
-      stat4n:"%100", stat4l:"kendi montaj ekibi",
-      chip1:"Evinizde ücretsiz ölçüm", chip2:"1 dakikada tahmini fiyat",
-      phVisual:"Hero görseli — önerilen boyut: 1920×1080px (pencere/cephe referansı)"
-    },
-    usp:{
-      u1t:"CE sertifikalı", u1d:"Avrupa ürün standartları",
-      u2t:"Kendi montaj ekibi", u2d:"Taşeron yok",
-      u3t:"Ücretsiz ölçüm", u3d:"Bağlayıcı olmayan danışmanlık",
-      u4t:"Hızlı teslimat", u4d:"Net planlama"
-    },
-    products:{
-      eyebrow:"Ürünler", title:"Sistemlerimiz", lead:"İki malzeme ailesi, sınırsız olanak — eviniz ve bütçenize göre.",
-      pvcTitle:"PVC Pencere & Kapı", pvcDesc:"Uygun fiyata mükemmel yalıtım. Bakım gerektirmez, birçok renk ve ahşap desenli folyo seçeneğiyle.",
-      pvcF1:"Mükemmel ısı yalıtımı", pvcF2:"Ses yalıtımlı cam seçeneği", pvcF3:"Çok sayıda renk & folyo", pvcF4:"Hırsıza karşı dayanıklı donanım",
-      aluTitle:"Alüminyum Sistemler", aluDesc:"Şık, güçlü ve ince. Büyük cam yüzeyler, sürme sistemler ve modern görünüm için ideal.",
-      aluF1:"Çok ince profiller", aluF2:"Cam için yüksek taşıma kapasitesi", aluF3:"Bakımsız & dayanıklı", aluF4:"İstediğiniz RAL renkleri",
-      more:"Tahmini fiyat al",
-      glassTitle:"Cam Seçenekleri", glassP:"Standart HR++'tan ekstra fonksiyonlu üçlü cama kadar.",
-      colorTitle:"Renk & Yüzey", colorP:"Beyaz, RAL çekirdek renkler ve gerçekçi ahşap desenli folyolar.",
-      phGlass:"Cam örneği / cam detayı", phColor:"Renk örneği / RAL numunesi"
-    },
-    calc:{
-      eyebrow:"Fiyat Hesaplayıcı", title:"Pencerenizi tasarlayın", lead:"Detayına kadar yapılandırın ve anında tahmini bir fiyat görün — teknik çizim dahil. Montaj ve KDV hariç.",
-      disclaimer:"Bu tahmini bir fiyattır ve bağlayıcı bir teklif değildir. Kesin fiyat, yerinde ölçüm sonrası size özel olarak sunulacaktır.",
-      leadTitle:"Size özel teklifinizi alın", leadDesc:"Bilgilerinizi girin, sizinle iletişime geçelim — teknik çizim ve uygun fiyatla birlikte.",
-      fName:"Ad Soyad", fEmail:"E-posta", fPhone:"Telefon", fAddress:"Adres (opsiyonel)",
-      consent:"Bilgilerimin bu talep kapsamında işlenmesini kabul ediyorum.",
-      submit:"Teklif Talebimi Gönder",
-      success:"Talebiniz alındı — en kısa sürede sizinle iletişime geçeceğiz.",
-      errName:"Adınızı girin", errEmail:"Geçerli bir e-posta girin", errConsent:"Onay zorunludur"
-    },
-    gallery:{
-      eyebrow:"Projeler", title:"Çalışmalarımız", lead:"Hollanda genelinde yakın zamanda tamamladığımız projelerden bir seçki.",
-      phProject:"Proje görseli — [PROJE ADI]", meta:"[Konum, m², tamamlanma tarihi]",
-      testiTitle:"Müşterilerimiz ne diyor", testiTxt:"[Müşteri yorumu buraya gelecek]", testiName:"[Müşteri adı]", testiLoc:"[Şehir]"
-    },
-    about:{
-      eyebrow:"Hakkımızda", title:"Zutphen'den ustalık",
-      p1:"[Firma hikayesi buraya gelecek — firmanın nasıl ve ne zaman kurulduğu, kurucunun vizyonu ve yıllar içindeki gelişimi.]",
-      p2:"[İkinci paragraf — firmanın temsil ettiği değerler: kalite, güvenilirlik ve müşteriyle kişisel iletişim.]",
-      p3:"[Üçüncü paragraf — kendi üretim ve montaj ekibi, çalışma bölgesi ve malzemeler.]",
-      missionT:"Misyonumuz", missionP:"[Misyon metni: yaptığımız işi neden yapıyoruz.]",
-      visionT:"Vizyonumuz", visionP:"[Vizyon metni: nereye ulaşmaya çalışıyoruz.]",
-      phTeam:"Ekip veya atölye fotoğrafı — önerilen boyut: 1200×800px"
-    },
-    services:{
-      eyebrow:"Hizmetler", title:"A'dan Z'ye tek elden", lead:"Tüm süreç için tek muhatap.",
-      s1t:"Ücretsiz Ölçüm", s1d:"Yerinize gelir, tam ölçüm yapar ve ücretsiz danışmanlık veririz.",
-      s2t:"Üretim", s2d:"Yapılandırmanıza ve özelliklerinize göre ölçüye özel üretim.",
-      s3t:"Montaj", s3d:"Kendi deneyimli ekibimizle profesyonel montaj.",
-      s4t:"Servis & Bakım", s4d:"Montaj sonrası ayar, bakım ve satış sonrası destek."
-    },
-    cta:{title:"Başlamaya hazır mısınız?", lead:"Bugün tahmini bir fiyat hesaplayın veya ücretsiz ölçüm randevusu planlayın."},
-    contact:{
-      eyebrow:"İletişim", title:"Bize ulaşın", lead:"Sorularınız mı var ya da özel teklif mi istiyorsunuz? Sizi duymaktan memnuniyet duyarız.",
-      fName:"Ad Soyad", fEmail:"E-posta", fPhone:"Telefon", fMsg:"Mesajınız", submit:"Mesaj Gönder",
-      success:"Teşekkürler — mesajınız gönderildi.",
-      addrK:"Adres", addrV:"[ADRES], Zutphen", phoneK:"Telefon", phoneV:"[TELEFON]", emailK:"E-posta", emailV:"[E-POSTA]", waK:"WhatsApp", waV:"[WHATSAPP]",
-      phMap:"Google Maps buraya eklenecek"
-    },
-    footer:{
-      about:"PVC ve alüminyum ölçüye özel kapı ve pencere. Zutphen merkezli, kendi ekibimizle üretim ve montaj.",
-      colProducts:"Ürünler", colCompany:"Firma", colLegal:"Yasal",
-      privacy:"Gizlilik Politikası", terms:"Genel Şartlar", cookies:"Çerez Politikası", kvk:"KVK & BTW", faq:"Sıkça Sorulan Sorular", warranty:"Garanti & Cayma Hakkı",
-      legalLine:"[FİRMA ADI] · KVK [KVK NUMARASI] · BTW [BTW NUMARASI] · Zutphen, Hollanda",
-      rights:"Tüm hakları saklıdır."
-    },
-    cookie:{text:"Web sitesinin düzgün çalışması ve iyileştirilmesi için çerezler kullanıyoruz. Seçim sizin.", accept:"Kabul Et", reject:"Reddet"},
-    legal:{
-      privacyT:"Gizlilik Politikası",
-      privacy1:"Hangi verileri topluyoruz", privacy1p:"Teklif talebi veya iletişim sırasında ad, e-posta, telefon ve (opsiyonel) adres bilgilerinizi topluyoruz.",
-      privacy2:"Neden ve ne kadar süreyle", privacy2p:"[Bu bölüm eklenecektir: işleme amacı ve saklama süresi, hukuki inceleme sonrası.]",
-      privacy3:"Haklarınız", privacy3p:"Erişim, düzeltme, silme ve itiraz hakkınız vardır. Bunun için veri sorumlusuyla iletişime geçin.",
-      privacy4:"Veri sorumlusu", privacy4p:"[FİRMA ADI], Zutphen — [E-POSTA].",
-      termsT:"Genel Şartlar",
-      terms1:"Sipariş süreci", terms1p:"[Bu bölüm sipariş ve teklif sürecini açıklar.]",
-      terms2:"Ödeme & kapora", terms2p:"[Ödeme koşulları ve kapora burada açıklanacaktır.]",
-      terms3:"Garanti", terms3p:"[Garanti koşulları burada açıklanacaktır.]",
-      terms4:"İptal & teslim süresi", terms4p:"[İptal ve gecikme koşulları burada açıklanacaktır.]",
-      cookieT:"Çerez Politikası",
-      cookie1:"Çerez nedir", cookie1p:"[Kullanılan çerezlere dair açıklama buraya eklenecektir.]",
-      cookie2:"Hangi çerezleri kullanıyoruz", cookie2p:"[İşlevsel ve analitik çerezler burada açıklanacaktır.]",
-      kvkT:"KVK & BTW Bilgileri",
-      kvk1:"Firma bilgileri", kvk1p:"[FİRMA ADI], Zutphen merkezli.", kvkNr:"KVK numarası: [KVK NUMARASI]", btwNr:"BTW numarası: [BTW NUMARASI]",
-      faqT:"Sıkça Sorulan Sorular",
-      faqQ1:"Teslimat ne kadar sürer?", faqA1:"[Teslim süresine dair yanıt buraya eklenecektir.]",
-      faqQ2:"Montaj dahil mi?", faqA2:"Montaj dahil edilebilir; bunu hesaplayıcıda ve teklifte seçersiniz.",
-      faqQ3:"Ne kadar garanti alıyorum?", faqA3:"[Garantiye dair yanıt buraya eklenecektir.]",
-      faqQ4:"Rengi kendim seçebilir miyim?", faqA4:"Evet, beyaz, RAL çekirdek renkler ve ahşap desenli folyolar mümkündür.",
-      faqQ5:"Fiyat nasıl belirlenir?", faqA5:"Hesaplayıcı tahmini bir fiyat verir; kesin fiyat ölçüm sonrası belirlenir.",
-      faqQ6:"Hollanda genelinde çalışıyor musunuz?", faqA6:"[Çalışma bölgesine dair yanıt buraya eklenecektir.]",
-      warrantyT:"Garanti & Cayma Hakkı",
-      warranty1:"Garanti", warranty1p:"[Garanti koşulları hukuki inceleme sonrası eklenecektir.]",
-      warranty2:"Ölçüye özel üründe cayma hakkı", warranty2p:"Özelliklerinize göre ölçüye özel üretilen ürünler, AB mevzuatına uygun olarak 14 günlük yasal cayma hakkının kapsamı dışındadır. Teklifi onaylayarak bunu kabul etmiş olursunuz."
-    },
-    pay:{
-      note:"Ödeme sayfası (örnek) — ileride kapora için aktif edilecektir.",
-      quoteNo:"Teklif No", amount:"Ödenecek Tutar", fName:"Ad Soyad", fEmail:"E-posta", fAddress:"Adres", btn:"Öde", locked:"sabit"
-    },
-    calcui:{viewInterior:"İç görünüm", viewExterior:"Dış görünüm", stMateriaal:"Malzeme", stType:"Tip", stVerdeling:"Bölme", stPerVak:"Her göz — sabit veya açılır", stAfmetingen:"Ölçüler", stBeglazing:"Cam", stKleur:"Renk & yüzey", stRichtprijs:"Tahmini fiyat — uygulamanızı seçin", stGegevens:"Bilgileriniz", matPvc:"Plastik (PVC)", matAlu:"Alüminyum", tRaam:"Pencere", tDeur:"Kapı", tSchuif:"Sürme sistem", tVouw:"Katlanır kapı", lBreedte:"Genişlik", lHoogte:"Yükseklik", gHr:"HR++ (standart)", gTriple:"Üçlü HR+++", eVeiligheid:"Güvenlik camı (lamine)", eGeluid:"Ses yalıtımlı cam", eZon:"Güneş kontrol camı", cWit:"Beyaz (dahil)", cRal:"RAL çekirdek renk", cFolie:"Ahşap desenli folyo", pricenote:"Adet başına tahmini fiyat, montaj ve KDV hariç. Kesin fiyat; donanım, detay ve yerinde ölçüme göre değişir.", addPos:"+ Pozisyon ekle", requestBtn:"Teklif iste", empty:"Henüz pozisyon eklenmedi.", totaal:"Toplam", posities:"pozisyon", phNaam:"Ad Soyad", phEmail:"E-posta", phTel:"Telefon numarası", phPostcode:"Posta kodu + şehir", phToelichting:"Açıklama (opsiyonel)", sendQuote:"Talebi gönder", sentMsg:"✓ Gönderildi — teknik çizim dahil, en kısa sürede dönüş yapacağız.", footCe:"CE sertifikalı sistemler", footEigen:"Kendi üretim & montaj", footRicht:"Tahmini fiyat, montaj & KDV hariç", dBreedte:"Genişlik", dHoogte:"Yükseklik", dOppervlak:"Alan", perStuk:"adet başına · montaj & KDV hariç", vakLabel:"Göz", vak:"göz", vakken:"göz", bVast:"Sabit (açılmaz)", bDkL:"Vasistas sol", bDkR:"Vasistas sağ", bDraaiL:"Açılır sol", bDraaiR:"Açılır sağ", tierVoordelig:"Ekonomik", tierStandaard:"Standart", tierPremium:"Premium", hintWit:"Çekirdek renk: beyaz, boydan boya.", hintRal:"RAL kartelasından seçilen çekirdek renk, boydan boya renkli.", hintFolie:"Ahşap desenli folyo, dış ve/veya iç yüzey."}
-  },
-  en: {
-    meta:{title:"Kozijnexpert — PVC & Aluminium Windows and Doors", description:"Quality PVC and aluminium windows and doors. Production and installation by our own team. Get an indicative price instantly."},
-    nav:{home:"Home", products:"Products", pvc:"PVC windows & doors", alu:"Aluminium systems", calc:"Price calculator", gallery:"Projects", about:"About us", services:"Services", contact:"Contact"},
-    hero:{
-      eyebrow:"PVC & Aluminium specialist",
-      title:"Quality windows and doors across the Netherlands",
-      lead:"We design, produce and install bespoke PVC and aluminium windows and doors. Craftsmanship by our own team, from measuring to final fitting.",
-      ctaCalc:"Calculate price", ctaContact:"Get in touch",
-      stat1n:"[YEARS]+", stat1l:"years of experience",
-      stat2n:"[COUNT]+", stat2l:"completed projects",
-      stat3n:"CE", stat3l:"certified products",
-      stat4n:"100%", stat4l:"in-house install team",
-      chip1:"Free home measurement", chip2:"Indicative price in 1 minute",
-      phVisual:"Hero image — recommended size: 1920×1080px (window/façade reference)"
-    },
-    usp:{
-      u1t:"CE certified", u1d:"European product standards",
-      u2t:"In-house install team", u2d:"No subcontractors",
-      u3t:"Free measuring", u3d:"No-obligation advice",
-      u4t:"Fast delivery", u4d:"Clear planning"
-    },
-    products:{
-      eyebrow:"Products", title:"Our systems", lead:"Two material families, endless possibilities — matched to your home and budget.",
-      pvcTitle:"PVC windows & doors", pvcDesc:"Excellent insulation at a sharp price. Low-maintenance and available in many colours and wood-grain foils.",
-      pvcF1:"Excellent thermal insulation", pvcF2:"Soundproof glazing available", pvcF3:"Many colours & foils", pvcF4:"Burglar-resistant hardware",
-      aluTitle:"Aluminium systems", aluDesc:"Sleek, strong and slim. Ideal for large glass surfaces, sliding doors and a modern look.",
-      aluF1:"Very slim profiles", aluF2:"High load capacity for glass", aluF3:"Maintenance-free & durable", aluF4:"RAL colours of your choice",
-      more:"Request indicative price",
-      glassTitle:"Glazing options", glassP:"From standard HR++ to triple glazing with extra functions.",
-      colorTitle:"Colours & finish", colorP:"White, RAL core colours and realistic wood-grain foils.",
-      phGlass:"Glass sample / glazing detail", phColor:"Colour swatch / RAL sample"
-    },
-    calc:{
-      eyebrow:"Price calculator", title:"Configure your window", lead:"Configure in detail and see an indicative price instantly — drawing included. Excl. installation and VAT.",
-      disclaimer:"This is an indicative price and not a binding offer. The final price is provided after an on-site measurement, tailored to your situation.",
-      leadTitle:"Receive your personal quote", leadDesc:"Enter your details and we'll get in touch — including a drawing and a sharp price.",
-      fName:"Name", fEmail:"Email address", fPhone:"Phone", fAddress:"Address (optional)",
-      consent:"I agree to the processing of my data for this request.",
-      submit:"Send quote request",
-      success:"Your request has been received — we'll contact you as soon as possible.",
-      errName:"Please enter your name", errEmail:"Please enter a valid email", errConsent:"Consent is required"
-    },
-    gallery:{
-      eyebrow:"Projects", title:"Our work", lead:"A selection of recently completed projects across the Netherlands.",
-      phProject:"Project photo — [PROJECT NAME]", meta:"[Location, m², completion date]",
-      testiTitle:"What clients say", testiTxt:"[Customer review goes here]", testiName:"[Client name]", testiLoc:"[City]"
-    },
-    about:{
-      eyebrow:"About us", title:"Craftsmanship from Zutphen",
-      p1:"[Company story goes here — how and when the company was founded, the founder's vision and its growth over the years.]",
-      p2:"[Second paragraph — what the company stands for: quality, reliability and personal contact with the customer.]",
-      p3:"[Third paragraph — the in-house production and installation team, service area and materials.]",
-      missionT:"Our mission", missionP:"[Mission text: why we do what we do.]",
-      visionT:"Our vision", visionP:"[Vision text: where we're working towards.]",
-      phTeam:"Team or workshop photo — recommended size: 1200×800px"
-    },
-    services:{
-      eyebrow:"Services", title:"Handled from A to Z", lead:"One point of contact for the entire process.",
-      s1t:"Free measuring", s1d:"We visit, measure precisely and advise you free of charge.",
-      s2t:"Production", s2d:"Custom production according to your configuration and specifications.",
-      s3t:"Installation", s3d:"Professional fitting by our own experienced team.",
-      s4t:"Service & maintenance", s4d:"Aftercare, adjustment and maintenance, also after delivery."
-    },
-    cta:{title:"Ready to get started?", lead:"Calculate an indicative price today or schedule a free measurement."},
-    contact:{
-      eyebrow:"Contact", title:"Get in touch", lead:"Questions or a tailored quote? We'd love to hear from you.",
-      fName:"Name", fEmail:"Email address", fPhone:"Phone", fMsg:"Your message", submit:"Send message",
-      success:"Thank you — your message has been sent.",
-      addrK:"Address", addrV:"[ADDRESS], Zutphen", phoneK:"Phone", phoneV:"[PHONE]", emailK:"Email", emailV:"[EMAIL]", waK:"WhatsApp", waV:"[WHATSAPP]",
-      phMap:"Google Maps will be embedded here"
-    },
-    footer:{
-      about:"Bespoke PVC and aluminium windows and doors. Production and installation by our own team, based in Zutphen.",
-      colProducts:"Products", colCompany:"Company", colLegal:"Legal",
-      privacy:"Privacy policy", terms:"Terms & conditions", cookies:"Cookie policy", kvk:"KVK & VAT", faq:"FAQ", warranty:"Warranty & withdrawal",
-      legalLine:"[COMPANY NAME] · KVK [KVK NUMBER] · VAT [VAT NUMBER] · Zutphen, Netherlands",
-      rights:"All rights reserved."
-    },
-    cookie:{text:"We use cookies to make the website work well and to improve it. The choice is yours.", accept:"Accept", reject:"Decline"},
-    legal:{
-      privacyT:"Privacy policy",
-      privacy1:"What data we collect", privacy1p:"We collect name, email, phone and (optionally) address when you request a quote or contact us.",
-      privacy2:"Why and for how long", privacy2p:"[This section will be completed: purpose of processing and retention period, after legal review.]",
-      privacy3:"Your rights", privacy3p:"You have the right to access, rectify, erase and object. Please contact the data controller for this.",
-      privacy4:"Data controller", privacy4p:"[COMPANY NAME], Zutphen — [EMAIL].",
-      termsT:"Terms & conditions",
-      terms1:"Ordering process", terms1p:"[This section describes the ordering and quotation process.]",
-      terms2:"Payment & deposit", terms2p:"[Payment conditions and deposit will be described here.]",
-      terms3:"Warranty", terms3p:"[Warranty conditions will be described here.]",
-      terms4:"Cancellation & delivery time", terms4p:"[Conditions for cancellation and delay will be described here.]",
-      cookieT:"Cookie policy",
-      cookie1:"What are cookies", cookie1p:"[Explanation of the cookies used will be added here.]",
-      cookie2:"Which cookies we use", cookie2p:"[Functional and analytical cookies will be described here.]",
-      kvkT:"KVK & VAT details",
-      kvk1:"Company details", kvk1p:"[COMPANY NAME], based in Zutphen.", kvkNr:"KVK number: [KVK NUMBER]", btwNr:"VAT number: [VAT NUMBER]",
-      faqT:"Frequently asked questions",
-      faqQ1:"How long does delivery take?", faqA1:"[Answer about delivery time will be added here.]",
-      faqQ2:"Is installation included?", faqA2:"Installation can be included; you choose this in the calculator and quote.",
-      faqQ3:"What warranty do I get?", faqA3:"[Answer about warranty will be added here.]",
-      faqQ4:"Can I choose the colour myself?", faqA4:"Yes, white, RAL core colours and wood-grain foils are possible.",
-      faqQ5:"How is the price determined?", faqA5:"The calculator gives an indicative price; the final price follows after measuring.",
-      faqQ6:"Do you work throughout the Netherlands?", faqA6:"[Answer about service area will be added here.]",
-      warrantyT:"Warranty & right of withdrawal",
-      warranty1:"Warranty", warranty1p:"[Warranty conditions will be added here after legal review.]",
-      warranty2:"Right of withdrawal for custom products", warranty2p:"Products made to measure according to your specifications are excluded from the statutory 14-day right of withdrawal, in accordance with EU regulations. By agreeing to the quote, you acknowledge this."
-    },
-    pay:{
-      note:"Payment page (example) — will be activated later for deposits.",
-      quoteNo:"Quote number", amount:"Amount due", fName:"Name", fEmail:"Email", fAddress:"Address", btn:"Pay", locked:"fixed"
-    },
-    calcui:{viewInterior:"Interior view", viewExterior:"Exterior view", stMateriaal:"Material", stType:"Type", stVerdeling:"Division", stPerVak:"Per bay — fixed or opening", stAfmetingen:"Dimensions", stBeglazing:"Glazing", stKleur:"Colour & finish", stRichtprijs:"Indicative price — choose your version", stGegevens:"Your details", matPvc:"PVC (plastic)", matAlu:"Aluminium", tRaam:"Window", tDeur:"Door", tSchuif:"Sliding door", tVouw:"Folding door", lBreedte:"Width", lHoogte:"Height", gHr:"HR++ (standard)", gTriple:"Triple HR+++", eVeiligheid:"Safety glass (laminated)", eGeluid:"Soundproof glass", eZon:"Solar-control glass", cWit:"White (included)", cRal:"RAL core colour", cFolie:"Wood-grain foil", pricenote:"Indicative price per unit, excl. installation & VAT. The final price depends on hardware, detailing and on-site measurement.", addPos:"+ Add position", requestBtn:"Request quote", empty:"No positions added yet.", totaal:"Total", posities:"positions", phNaam:"Name", phEmail:"Email address", phTel:"Phone number", phPostcode:"Postcode + city", phToelichting:"Notes (optional)", sendQuote:"Send request", sentMsg:"✓ Sent — we'll get in touch soon, including a drawing.", footCe:"CE-certified systems", footEigen:"In-house production & installation", footRicht:"Indicative price excl. installation & VAT", dBreedte:"Width", dHoogte:"Height", dOppervlak:"Area", perStuk:"per unit · excl. installation & VAT", vakLabel:"Bay", vak:"bay", vakken:"bays", bVast:"Fixed (non-opening)", bDkL:"Tilt & turn left", bDkR:"Tilt & turn right", bDraaiL:"Turn left", bDraaiR:"Turn right", tierVoordelig:"Budget", tierStandaard:"Standard", tierPremium:"Premium", hintWit:"Core colour: white, all the way through.", hintRal:"Core colour of your choice from the RAL fan, coloured throughout.", hintFolie:"Wood-grain foil, exterior and/or interior side."}
-  },
-  de: {
-    meta:{title:"Kozijnexpert — PVC & Aluminium Fenster und Türen", description:"Hochwertige Fenster und Türen aus PVC und Aluminium. Produktion und Montage durch eigenes Team. Sofort einen Richtpreis erhalten."},
-    nav:{home:"Start", products:"Produkte", pvc:"PVC Fenster & Türen", alu:"Aluminium-Systeme", calc:"Preisrechner", gallery:"Projekte", about:"Über uns", services:"Leistungen", contact:"Kontakt"},
-    hero:{
-      eyebrow:"PVC & Aluminium Spezialist",
-      title:"Hochwertige Fenster und Türen in den ganzen Niederlanden",
-      lead:"Wir entwerfen, produzieren und montieren maßgefertigte Fenster und Türen aus PVC und Aluminium. Handwerk vom eigenen Team, vom Aufmaß bis zur Endmontage.",
-      ctaCalc:"Preis berechnen", ctaContact:"Kontakt aufnehmen",
-      stat1n:"[JAHRE]+", stat1l:"Jahre Erfahrung",
-      stat2n:"[ANZAHL]+", stat2l:"abgeschlossene Projekte",
-      stat3n:"CE", stat3l:"zertifizierte Produkte",
-      stat4n:"100%", stat4l:"eigenes Montageteam",
-      chip1:"Kostenloses Aufmaß zu Hause", chip2:"Richtpreis in 1 Minute",
-      phVisual:"Hero-Bild — empfohlene Größe: 1920×1080px (Fenster/Fassaden-Referenz)"
-    },
-    usp:{
-      u1t:"CE-zertifiziert", u1d:"Europäische Produktnormen",
-      u2t:"Eigenes Montageteam", u2d:"Keine Subunternehmer",
-      u3t:"Kostenloses Aufmaß", u3d:"Unverbindliche Beratung",
-      u4t:"Schnelle Lieferzeit", u4d:"Klare Planung"
-    },
-    products:{
-      eyebrow:"Produkte", title:"Unsere Systeme", lead:"Zwei Materialfamilien, unendliche Möglichkeiten — abgestimmt auf Ihr Zuhause und Budget.",
-      pvcTitle:"PVC Fenster & Türen", pvcDesc:"Ausgezeichnete Dämmung zum scharfen Preis. Pflegeleicht und in vielen Farben und Holzdekor-Folien erhältlich.",
-      pvcF1:"Ausgezeichnete Wärmedämmung", pvcF2:"Schalldämmende Verglasung möglich", pvcF3:"Viele Farben & Folien", pvcF4:"Einbruchhemmende Beschläge",
-      aluTitle:"Aluminium-Systeme", aluDesc:"Elegant, stark und schlank. Ideal für große Glasflächen, Schiebetüren und eine moderne Optik.",
-      aluF1:"Sehr schlanke Profile", aluF2:"Hohe Tragfähigkeit für Glas", aluF3:"Wartungsfrei & langlebig", aluF4:"RAL-Farben nach Wahl",
-      more:"Richtpreis anfragen",
-      glassTitle:"Verglasungsoptionen", glassP:"Von Standard HR++ bis zur Dreifachverglasung mit Zusatzfunktionen.",
-      colorTitle:"Farben & Ausführung", colorP:"Weiß, RAL-Kernfarben und realistische Holzdekor-Folien.",
-      phGlass:"Glasmuster / Verglasungsdetail", phColor:"Farbmuster / RAL-Muster"
-    },
-    calc:{
-      eyebrow:"Preisrechner", title:"Stellen Sie Ihr Fenster zusammen", lead:"Detailliert konfigurieren und sofort einen Richtpreis sehen — inklusive Zeichnung. Zzgl. Montage und MwSt.",
-      disclaimer:"Dies ist ein Richtpreis und kein verbindliches Angebot. Den endgültigen Preis erhalten Sie nach einem Aufmaß vor Ort, individuell für Ihre Situation.",
-      leadTitle:"Erhalten Sie Ihr persönliches Angebot", leadDesc:"Geben Sie Ihre Daten ein und wir melden uns — inklusive Zeichnung und scharfem Preis.",
-      fName:"Name", fEmail:"E-Mail-Adresse", fPhone:"Telefon", fAddress:"Adresse (optional)",
-      consent:"Ich stimme der Verarbeitung meiner Daten für diese Anfrage zu.",
-      submit:"Angebotsanfrage senden",
-      success:"Ihre Anfrage ist eingegangen — wir melden uns schnellstmöglich bei Ihnen.",
-      errName:"Bitte geben Sie Ihren Namen ein", errEmail:"Bitte geben Sie eine gültige E-Mail ein", errConsent:"Zustimmung ist erforderlich"
-    },
-    gallery:{
-      eyebrow:"Projekte", title:"Unsere Arbeit", lead:"Eine Auswahl kürzlich abgeschlossener Projekte in den ganzen Niederlanden.",
-      phProject:"Projektfoto — [PROJEKTNAME]", meta:"[Ort, m², Fertigstellungsdatum]",
-      testiTitle:"Was Kunden sagen", testiTxt:"[Kundenbewertung kommt hier hin]", testiName:"[Kundenname]", testiLoc:"[Stadt]"
-    },
-    about:{
-      eyebrow:"Über uns", title:"Handwerk aus Zutphen",
-      p1:"[Firmengeschichte kommt hier hin — wie und wann das Unternehmen gegründet wurde, die Vision des Gründers und das Wachstum über die Jahre.]",
-      p2:"[Zweiter Absatz — wofür das Unternehmen steht: Qualität, Zuverlässigkeit und persönlicher Kontakt zum Kunden.]",
-      p3:"[Dritter Absatz — das eigene Produktions- und Montageteam, Einzugsgebiet und Materialien.]",
-      missionT:"Unsere Mission", missionP:"[Missionstext: warum wir tun, was wir tun.]",
-      visionT:"Unsere Vision", visionP:"[Visionstext: worauf wir hinarbeiten.]",
-      phTeam:"Team- oder Werkstattfoto — empfohlene Größe: 1200×800px"
-    },
-    services:{
-      eyebrow:"Leistungen", title:"Von A bis Z geregelt", lead:"Ein Ansprechpartner für den gesamten Prozess.",
-      s1t:"Kostenloses Aufmaß", s1d:"Wir kommen vorbei, messen exakt und beraten unverbindlich.",
-      s2t:"Produktion", s2d:"Maßgefertigte Produktion nach Ihrer Konfiguration und Spezifikation.",
-      s3t:"Montage", s3d:"Fachgerechte Montage durch unser eigenes erfahrenes Team.",
-      s4t:"Service & Wartung", s4d:"Nachsorge, Einstellung und Wartung, auch nach der Lieferung."
-    },
-    cta:{title:"Bereit anzufangen?", lead:"Berechnen Sie noch heute einen Richtpreis oder planen Sie ein kostenloses Aufmaß."},
-    contact:{
-      eyebrow:"Kontakt", title:"Kontakt aufnehmen", lead:"Fragen oder ein individuelles Angebot? Wir hören gerne von Ihnen.",
-      fName:"Name", fEmail:"E-Mail-Adresse", fPhone:"Telefon", fMsg:"Ihre Nachricht", submit:"Nachricht senden",
-      success:"Danke — Ihre Nachricht wurde gesendet.",
-      addrK:"Adresse", addrV:"[ADRESSE], Zutphen", phoneK:"Telefon", phoneV:"[TELEFON]", emailK:"E-Mail", emailV:"[E-MAIL]", waK:"WhatsApp", waV:"[WHATSAPP]",
-      phMap:"Google Maps wird hier eingebettet"
-    },
-    footer:{
-      about:"Maßgefertigte Fenster und Türen aus PVC und Aluminium. Produktion und Montage durch eigenes Team, ansässig in Zutphen.",
-      colProducts:"Produkte", colCompany:"Unternehmen", colLegal:"Rechtliches",
-      privacy:"Datenschutzerklärung", terms:"AGB", cookies:"Cookie-Richtlinie", kvk:"KVK & USt.", faq:"FAQ", warranty:"Garantie & Widerruf",
-      legalLine:"[FIRMENNAME] · KVK [KVK-NUMMER] · USt. [UST-NUMMER] · Zutphen, Niederlande",
-      rights:"Alle Rechte vorbehalten."
-    },
-    cookie:{text:"Wir verwenden Cookies, damit die Website gut funktioniert und verbessert wird. Die Wahl liegt bei Ihnen.", accept:"Akzeptieren", reject:"Ablehnen"},
-    legal:{
-      privacyT:"Datenschutzerklärung",
-      privacy1:"Welche Daten wir erheben", privacy1p:"Wir erheben Name, E-Mail, Telefon und (optional) Adresse, wenn Sie ein Angebot anfragen oder Kontakt aufnehmen.",
-      privacy2:"Warum und wie lange", privacy2p:"[Dieser Abschnitt wird ergänzt: Zweck der Verarbeitung und Speicherdauer, nach rechtlicher Prüfung.]",
-      privacy3:"Ihre Rechte", privacy3p:"Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Widerspruch. Bitte wenden Sie sich hierzu an den Verantwortlichen.",
-      privacy4:"Verantwortlicher", privacy4p:"[FIRMENNAME], Zutphen — [E-MAIL].",
-      termsT:"Allgemeine Geschäftsbedingungen",
-      terms1:"Bestellvorgang", terms1p:"[Dieser Abschnitt beschreibt den Bestell- und Angebotsprozess.]",
-      terms2:"Zahlung & Anzahlung", terms2p:"[Zahlungsbedingungen und Anzahlung werden hier beschrieben.]",
-      terms3:"Garantie", terms3p:"[Garantiebedingungen werden hier beschrieben.]",
-      terms4:"Stornierung & Lieferzeit", terms4p:"[Bedingungen bei Stornierung und Verzug werden hier beschrieben.]",
-      cookieT:"Cookie-Richtlinie",
-      cookie1:"Was sind Cookies", cookie1p:"[Erklärung zu den verwendeten Cookies wird hier ergänzt.]",
-      cookie2:"Welche Cookies wir verwenden", cookie2p:"[Funktionale und analytische Cookies werden hier beschrieben.]",
-      kvkT:"KVK & USt.-Angaben",
-      kvk1:"Firmenangaben", kvk1p:"[FIRMENNAME], ansässig in Zutphen.", kvkNr:"KVK-Nummer: [KVK-NUMMER]", btwNr:"USt.-Nummer: [UST-NUMMER]",
-      faqT:"Häufig gestellte Fragen",
-      faqQ1:"Wie lange dauert die Lieferung?", faqA1:"[Antwort zur Lieferzeit wird hier ergänzt.]",
-      faqQ2:"Ist die Montage inbegriffen?", faqA2:"Die Montage kann inbegriffen sein; das wählen Sie im Rechner und Angebot.",
-      faqQ3:"Welche Garantie erhalte ich?", faqA3:"[Antwort zur Garantie wird hier ergänzt.]",
-      faqQ4:"Kann ich die Farbe selbst wählen?", faqA4:"Ja, Weiß, RAL-Kernfarben und Holzdekor-Folien sind möglich.",
-      faqQ5:"Wie wird der Preis bestimmt?", faqA5:"Der Rechner gibt einen Richtpreis; der Endpreis folgt nach dem Aufmaß.",
-      faqQ6:"Arbeiten Sie in den ganzen Niederlanden?", faqA6:"[Antwort zum Einzugsgebiet wird hier ergänzt.]",
-      warrantyT:"Garantie & Widerrufsrecht",
-      warranty1:"Garantie", warranty1p:"[Garantiebedingungen werden hier nach rechtlicher Prüfung ergänzt.]",
-      warranty2:"Widerrufsrecht bei Maßanfertigung", warranty2p:"Produkte, die nach Ihren Spezifikationen maßgefertigt werden, sind gemäß EU-Recht vom gesetzlichen 14-tägigen Widerrufsrecht ausgeschlossen. Mit der Zustimmung zum Angebot erkennen Sie dies an."
-    },
-    pay:{
-      note:"Zahlungsseite (Beispiel) — wird später für Anzahlungen aktiviert.",
-      quoteNo:"Angebotsnummer", amount:"Zu zahlender Betrag", fName:"Name", fEmail:"E-Mail", fAddress:"Adresse", btn:"Bezahlen", locked:"fest"
-    },
-    calcui:{viewInterior:"Innenansicht", viewExterior:"Außenansicht", stMateriaal:"Material", stType:"Typ", stVerdeling:"Aufteilung", stPerVak:"Pro Feld — fest oder öffnend", stAfmetingen:"Abmessungen", stBeglazing:"Verglasung", stKleur:"Farbe & Ausführung", stRichtprijs:"Richtpreis — wählen Sie Ihre Ausführung", stGegevens:"Ihre Daten", matPvc:"Kunststoff (PVC)", matAlu:"Aluminium", tRaam:"Fenster", tDeur:"Tür", tSchuif:"Schiebeelement", tVouw:"Falttür", lBreedte:"Breite", lHoogte:"Höhe", gHr:"HR++ (Standard)", gTriple:"Dreifach HR+++", eVeiligheid:"Sicherheitsglas (VSG)", eGeluid:"Schallschutzglas", eZon:"Sonnenschutzglas", cWit:"Weiß (inbegriffen)", cRal:"RAL-Kernfarbe", cFolie:"Folie mit Holzdekor", pricenote:"Richtpreis pro Stück, zzgl. Montage & MwSt. Der endgültige Preis hängt von Beschlägen, Detaillierung und Aufmaß vor Ort ab.", addPos:"+ Position hinzufügen", requestBtn:"Angebot anfragen", empty:"Noch keine Positionen hinzugefügt.", totaal:"Gesamt", posities:"Positionen", phNaam:"Name", phEmail:"E-Mail-Adresse", phTel:"Telefonnummer", phPostcode:"PLZ + Ort", phToelichting:"Anmerkung (optional)", sendQuote:"Anfrage senden", sentMsg:"✓ Gesendet — wir melden uns bald, inklusive Zeichnung.", footCe:"CE-zertifizierte Systeme", footEigen:"Eigene Produktion & Montage", footRicht:"Richtpreis zzgl. Montage & MwSt.", dBreedte:"Breite", dHoogte:"Höhe", dOppervlak:"Fläche", perStuk:"pro Stück · zzgl. Montage & MwSt.", vakLabel:"Feld", vak:"Feld", vakken:"Felder", bVast:"Fest (nicht öffnend)", bDkL:"Dreh-Kipp links", bDkR:"Dreh-Kipp rechts", bDraaiL:"Dreh links", bDraaiR:"Dreh rechts", tierVoordelig:"Günstig", tierStandaard:"Standard", tierPremium:"Premium", hintWit:"Kernfarbe: weiß, durchgefärbt.", hintRal:"Kernfarbe nach Wahl aus dem RAL-Fächer, durchgefärbt.", hintFolie:"Folie mit Holzdekor-Struktur, Außen- und/oder Innenseite."}
-  }
-};
+/* Content wordt geladen uit externe JSON-bestanden: content/{lang}.json (fetch) */
+let translations = {};
 </script>
 <script>
 (function(){
@@ -1663,7 +1215,8 @@ const translations = {
   }
   function checkPayDemo(){ if(location.hash==='#odeme-demo'){ const el=document.getElementById('odeme-demo'); if(el) el.classList.remove('hidden'); } }
   window.addEventListener('hashchange', checkPayDemo); checkPayDemo();
-  applyLang(getInitialLang());
+  window.__applyLang = applyLang;
+  window.__getInitialLang = getInitialLang;
 })();
 </script>
 <script>
@@ -1983,10 +1536,26 @@ const translations = {
     renderPositions();
     updateColorHint();
   };
-  renderDivisionGrid();
-  renderBayList();
-  updateColorHint();
-  updateAll();
+  window.kzwInit = function(lang){
+    if(lang && translations[lang] && translations[lang].calcui) CUR_LANG = lang;
+    renderDivisionGrid();
+    renderBayList();
+    updateColorHint();
+    updateAll();
+  };
+})();
+</script>
+<script>
+/* Loader: haalt de teksten op uit content/{lang}.json en initialiseert daarna de site + calculator.
+   LET OP: fetch werkt alleen wanneer de site via http(s) draait (bv. GitHub Pages),
+   niet door index.html lokaal te dubbelklikken (file://). */
+(function(){
+  var LANGS=['nl','tr','en','de'];
+  function pick(){ try{var s=localStorage.getItem('kzw_lang'); if(s&&LANGS.indexOf(s)>=0)return s;}catch(e){} var n=(navigator.language||'nl').slice(0,2).toLowerCase(); return LANGS.indexOf(n)>=0?n:'en'; }
+  function boot(lang){ if(window.__applyLang) window.__applyLang(lang); if(window.kzwInit) window.kzwInit(lang); }
+  Promise.all(LANGS.map(function(l){ return fetch('content/'+l+'.json',{cache:'no-cache'}).then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status+' voor '+l); return r.json(); }); }))
+    .then(function(arr){ arr.forEach(function(d,i){ translations[LANGS[i]] = d; }); boot(pick()); })
+    .catch(function(e){ console.error('Kon content niet laden \u2014 host de site (bv. GitHub Pages) of gebruik een lokale webserver:', e); });
 })();
 </script>
 </body>
