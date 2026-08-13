@@ -1,1 +1,144 @@
-dd
+{
+  "bron": "Eko-Okna S.A. — productafbeeldingen gebruikt met toestemming van de fabrikant",
+  "producten": [
+    {
+      "slug": "ramen",
+      "afbeelding": "/assets/img/producten/ramen.webp",
+      "naam": { "nl": "Ramen", "en": "Windows", "de": "Fenster", "tr": "Pencereler" },
+      "sub": [
+        { "slug": "pvc-ramen", "afbeelding": "/assets/img/producten/pvc-ramen.webp",
+          "naam": { "nl": "PVC-ramen", "en": "PVC windows", "de": "PVC-Fenster", "tr": "PVC pencereler" } },
+        { "slug": "aluminium-ramen", "afbeelding": "/assets/img/producten/aluminium-ramen.webp",
+          "naam": { "nl": "Aluminium ramen", "en": "Aluminium windows", "de": "Aluminiumfenster", "tr": "Alüminyum pencereler" } },
+        { "slug": "stalen-ramen", "afbeelding": "/assets/img/producten/stalen-ramen.webp",
+          "naam": { "nl": "Stalen ramen", "en": "Steel windows", "de": "Stahlfenster", "tr": "Çelik pencereler" } },
+        { "slug": "houten-ramen", "afbeelding": "/assets/img/producten/houten-ramen.webp",
+          "naam": { "nl": "Houten ramen", "en": "Wooden windows", "de": "Holzfenster", "tr": "Ahşap pencereler" } },
+        { "slug": "raam-extras", "afbeelding": "/assets/img/producten/raam-extras.webp",
+          "naam": { "nl": "Extra's", "en": "Accessories", "de": "Zubehör", "tr": "Aksesuarlar" } }
+      ]
+    },
+    {
+      "slug": "deuren",
+      "afbeelding": "/assets/img/producten/deuren.webp",
+      "naam": { "nl": "Deuren", "en": "Doors", "de": "Türen", "tr": "Kapılar" },
+      "sub": [
+        { "slug": "pvc-deuren", "afbeelding": "/assets/img/producten/pvc-deuren.webp",
+          "naam": { "nl": "PVC-deuren", "en": "PVC doors", "de": "PVC-Türen", "tr": "PVC kapılar" } },
+        { "slug": "aluminium-deuren", "afbeelding": "/assets/img/producten/aluminium-deuren.webp",
+          "naam": { "nl": "Aluminium deuren", "en": "Aluminium doors", "de": "Aluminiumtüren", "tr": "Alüminyum kapılar" } },
+        { "slug": "stalen-deuren", "afbeelding": "/assets/img/producten/stalen-deuren.webp",
+          "naam": { "nl": "Stalen deuren", "en": "Steel doors", "de": "Stahltüren", "tr": "Çelik kapılar" } },
+        { "slug": "houten-deuren", "afbeelding": "/assets/img/producten/houten-deuren.webp",
+          "naam": { "nl": "Houten deuren", "en": "Wooden doors", "de": "Holztüren", "tr": "Ahşap kapılar" } },
+        { "slug": "binnendeuren", "afbeelding": "/assets/img/producten/binnendeuren.webp",
+          "naam": { "nl": "Binnendeuren", "en": "Interior doors", "de": "Innentüren", "tr": "İç kapılar" } }
+      ]
+    },
+    {
+      "slug": "schuifsystemen",
+      "afbeelding": "/assets/img/producten/schuifsystemen.webp",
+      "naam": { "nl": "Schuifsystemen", "en": "Sliding systems", "de": "Schiebesysteme", "tr": "Sürme sistemler" },
+      "sub": [
+        { "slug": "pvc-schuifsystemen", "afbeelding": "/assets/img/producten/pvc-schuifsystemen.webp",
+          "naam": { "nl": "PVC-systemen", "en": "PVC systems", "de": "PVC-Systeme", "tr": "PVC sistemler" } },
+        { "slug": "aluminium-schuifsystemen", "afbeelding": "/assets/img/producten/aluminium-schuifsystemen.webp",
+          "naam": { "nl": "Aluminiumsystemen", "en": "Aluminium systems", "de": "Aluminiumsysteme", "tr": "Alüminyum sistemler" } },
+        { "slug": "stalen-schuifsystemen", "afbeelding": "/assets/img/producten/stalen-schuifsystemen.webp",
+          "naam": { "nl": "Stalen systemen", "en": "Steel systems", "de": "Stahlsysteme", "tr": "Çelik sistemler" } },
+        { "slug": "houten-schuifsystemen", "afbeelding": "/assets/img/producten/houten-schuifsystemen.webp",
+          "naam": { "nl": "Houten systemen", "en": "Wooden systems", "de": "Holzsysteme", "tr": "Ahşap sistemler" } }
+      ]
+    },
+    {
+      "slug": "rolluiken",
+      "afbeelding": "/assets/img/producten/rolluiken.webp",
+      "naam": { "nl": "Rolluiken & zonwering", "en": "Window covers", "de": "Rollläden & Sonnenschutz", "tr": "Panjur ve güneşlikler" },
+      "sub": [
+        { "slug": "voorzet-rolluiken", "afbeelding": "/assets/img/producten/voorzet-rolluiken.webp",
+          "naam": { "nl": "Voorzetrolluiken", "en": "Top-mounted shutters", "de": "Vorbaurollläden", "tr": "Dıştan monte panjurlar" } },
+        { "slug": "inbouwrolluiken", "afbeelding": "/assets/img/producten/inbouwrolluiken.webp",
+          "naam": { "nl": "Inbouwrolluiken", "en": "Flush-mounted shutters", "de": "Einbaurollläden", "tr": "Gömme panjurlar" } },
+        { "slug": "screens", "afbeelding": "/assets/img/producten/screens.webp",
+          "naam": { "nl": "Screens", "en": "Screen blinds", "de": "Screens", "tr": "Screen sistemleri" } },
+        { "slug": "geveljaloezieen", "afbeelding": "/assets/img/producten/geveljaloezieen.webp",
+          "naam": { "nl": "Geveljaloezieën", "en": "External blinds", "de": "Raffstoren", "tr": "Dış cephe jaluzileri" } },
+        { "slug": "shutters", "afbeelding": "/assets/img/producten/shutters.webp",
+          "naam": { "nl": "Shutters", "en": "Shutters", "de": "Fensterläden", "tr": "Ahşap kepenkler" } }
+      ]
+    },
+    {
+      "slug": "garagedeuren",
+      "afbeelding": "/assets/img/producten/garagedeuren.webp",
+      "naam": { "nl": "Industriële en garagedeuren", "en": "Industrial and garage doors", "de": "Industrie- und Garagentore", "tr": "Endüstriyel ve garaj kapıları" },
+      "sub": [
+        { "slug": "sectionale-garagedeuren", "afbeelding": "/assets/img/producten/sectionale-garagedeuren.webp",
+          "naam": { "nl": "Sectionale garagedeuren", "en": "Sectional garage doors", "de": "Sektionaltore", "tr": "Seksiyonel garaj kapıları" } },
+        { "slug": "infiniti", "afbeelding": "/assets/img/producten/infiniti.webp",
+          "naam": { "nl": "INFINITI garagedeuren", "en": "INFINITI garage doors", "de": "INFINITI Garagentore", "tr": "INFINITI garaj kapıları" } },
+        { "slug": "roldeuren", "afbeelding": "/assets/img/producten/roldeuren.webp",
+          "naam": { "nl": "Roldeuren", "en": "Rolling doors", "de": "Rolltore", "tr": "Rulo kapılar" } },
+        { "slug": "rolroosters", "afbeelding": "/assets/img/producten/rolroosters.webp",
+          "naam": { "nl": "Rolroosters", "en": "Rolling grilles", "de": "Rollgitter", "tr": "Rulo kepenkler" } }
+      ]
+    },
+    {
+      "slug": "omheiningen",
+      "afbeelding": "/assets/img/producten/omheiningen.webp",
+      "naam": { "nl": "Omheiningen", "en": "Fences", "de": "Zäune", "tr": "Çitler" },
+      "sub": [
+        { "slug": "standaard-omheiningen", "afbeelding": "/assets/img/producten/standaard-omheiningen.webp",
+          "naam": { "nl": "Standaard omheiningen", "en": "Standard fences", "de": "Standardzäune", "tr": "Standart çitler" } },
+        { "slug": "elegantie-omheiningen", "afbeelding": "/assets/img/producten/elegantie-omheiningen.webp",
+          "naam": { "nl": "Elegantie omheiningen", "en": "Elegance fences", "de": "Elegance-Zäune", "tr": "Elegance çitler" } },
+        { "slug": "prestige-omheiningen", "afbeelding": "/assets/img/producten/prestige-omheiningen.webp",
+          "naam": { "nl": "Prestige omheiningen", "en": "Prestige fences", "de": "Prestige-Zäune", "tr": "Prestige çitler" } }
+      ]
+    },
+    {
+      "slug": "horren",
+      "afbeelding": "/assets/img/producten/horren.webp",
+      "naam": { "nl": "Horren", "en": "Mosquito nets", "de": "Insektenschutz", "tr": "Sineklikler" },
+      "sub": [
+        { "slug": "raamhorren", "afbeelding": "/assets/img/producten/raamhorren.webp",
+          "naam": { "nl": "Raamhorren", "en": "Window mosquito nets", "de": "Fenster-Insektenschutz", "tr": "Pencere sineklikleri" } },
+        { "slug": "deurhorren", "afbeelding": "/assets/img/producten/deurhorren.webp",
+          "naam": { "nl": "Deurhorren", "en": "Door mosquito nets", "de": "Tür-Insektenschutz", "tr": "Kapı sineklikleri" } },
+        { "slug": "schuifhorren", "afbeelding": "/assets/img/producten/schuifhorren.webp",
+          "naam": { "nl": "Schuifhorren", "en": "Sliding mosquito nets", "de": "Schiebe-Insektenschutz", "tr": "Sürme sineklikler" } }
+      ]
+    },
+    {
+      "slug": "beglazing",
+      "afbeelding": "/assets/img/producten/beglazing.webp",
+      "naam": { "nl": "Beglazing", "en": "Panes", "de": "Verglasung", "tr": "Cam üniteleri" },
+      "sub": [
+        { "slug": "beglazingseenheden", "afbeelding": "/assets/img/producten/beglazingseenheden.webp",
+          "naam": { "nl": "Beglazingseenheden", "en": "Glazing units", "de": "Glaseinheiten", "tr": "Cam üniteleri" } },
+        { "slug": "soorten-glas", "afbeelding": "/assets/img/producten/soorten-glas.webp",
+          "naam": { "nl": "Soorten glas", "en": "Types of glass panes", "de": "Glasarten", "tr": "Cam türleri" } }
+      ]
+    },
+    {
+      "slug": "pergolas",
+      "afbeelding": "/assets/img/producten/pergolas.webp",
+      "naam": { "nl": "Pergola's", "en": "Pergolas", "de": "Pergolen", "tr": "Pergolalar" },
+      "sub": [
+        { "slug": "bioklimatische-pergolas", "afbeelding": "/assets/img/producten/bioklimatische-pergolas.webp",
+          "naam": { "nl": "Bioklimatische pergola's", "en": "Bioclimatic pergolas", "de": "Bioklimatische Pergolen", "tr": "Biyoklimatik pergolalar" } }
+      ]
+    },
+    {
+      "slug": "all-in-one",
+      "afbeelding": "/assets/img/producten/all-in-one.webp",
+      "naam": { "nl": "All in One", "en": "All in One", "de": "All in One", "tr": "All in One" },
+      "sub": []
+    },
+    {
+      "slug": "exclusive-aluline",
+      "afbeelding": "/assets/img/producten/exclusive-aluline.webp",
+      "naam": { "nl": "Exclusive AluLine", "en": "Exclusive AluLine", "de": "Exclusive AluLine", "tr": "Exclusive AluLine" },
+      "sub": []
+    }
+  ]
+}
