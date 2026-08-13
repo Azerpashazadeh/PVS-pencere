@@ -697,6 +697,178 @@
     </div>
   </div>
 </section>
+<section id="assortiment" class="kd-assortiment">
+  <div class="kd-wrap">
+    <nav class="kd-kruimels" id="kd-kruimels"></nav>
+    <h2 id="kd-titel">Ons volledige assortiment</h2>
+    <p class="kd-lead" id="kd-lead"></p>
+    <div class="kd-grid" id="kd-grid"><p class="kd-loading">Laden…</p></div>
+    <p class="kd-credit">Productafbeeldingen: Eko-Okna S.A., gebruikt met toestemming.
+      Technische gegevens onder voorbehoud van wijzigingen door de fabrikant.</p>
+  </div>
+</section>
+ 
+<style>
+  .kd-assortiment { padding: 5rem 0; }
+  .kd-wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+  .kd-lead { max-width: 62ch; opacity: .8; margin-bottom: 2rem; }
+ 
+  .kd-kruimels { display:flex; flex-wrap:wrap; gap:.4rem; align-items:center;
+                 font-size:.85rem; margin-bottom:.75rem; opacity:.75; }
+  .kd-kruimels button { background:none; border:0; padding:0; cursor:pointer;
+                        color:inherit; font:inherit; text-decoration:underline; }
+  .kd-kruimels span.sep { opacity:.4; }
+ 
+  .kd-grid { display:grid; gap:1.25rem;
+             grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); }
+ 
+  .kd-card { display:block; overflow:hidden; padding:0; text-align:left;
+             border-radius:18px; cursor:pointer; color:inherit; font:inherit;
+             text-decoration:none; border:1px solid rgba(255,255,255,.18);
+             background:rgba(255,255,255,.07); backdrop-filter:blur(14px);
+             transition:transform .25s ease, box-shadow .25s ease; }
+  .kd-card:hover { transform:translateY(-4px); box-shadow:0 18px 40px rgba(0,0,0,.18); }
+  .kd-card img { width:100%; aspect-ratio:4/3; object-fit:contain; display:block;
+                 padding:.5rem; background:rgba(255,255,255,.04); }
+  .kd-card.cat img { object-fit:cover; padding:0; }
+  .kd-card-body { padding:.9rem 1.05rem 1.1rem; }
+  .kd-card-body h3 { margin:0 0 .45rem; font-size:1.02rem; }
+  .kd-card-meta { display:block; font-size:.8rem; opacity:.6; }
+ 
+  .kd-specs { display:flex; flex-wrap:wrap; gap:.35rem; margin:.5rem 0 0; }
+  .kd-specs li { list-style:none; font-size:.74rem; padding:.2rem .55rem;
+                 border-radius:999px; background:rgba(255,255,255,.12);
+                 border:1px solid rgba(255,255,255,.15); white-space:nowrap; }
+  .kd-card-cta { display:inline-block; margin-top:.75rem; font-size:.85rem; font-weight:600; }
+ 
+  .kd-credit { margin-top:2.25rem; font-size:.78rem; opacity:.55; max-width:60ch; }
+  .kd-loading { opacity:.6; }
+</style>
+ 
+<script>
+(() => {
+  const GRID = document.getElementById('kd-grid');
+  const KRUI = document.getElementById('kd-kruimels');
+  const TIT  = document.getElementById('kd-titel');
+  const LEAD = document.getElementById('kd-lead');
+  const CALC = 'pvccaculator.html';
+ 
+  const T = {
+    nl:{ titel:"Ons volledige assortiment", start:"Assortiment", opties:"opties",
+         systemen:"systemen", offerte:"Vraag richtprijs aan",
+         kamers:"kamers", dichtingen:"dichtingen", houtlagen:"houtlagen", rails:"rail(s)",
+         diepte:"mm inbouwdiepte", beglazing:"mm beglazing",
+         lead:"Van ramen en deuren tot rolluiken, garagedeuren en pergola's — geproduceerd in onze Europese fabriek, door ons geleverd en gemonteerd in heel Nederland." },
+    en:{ titel:"Our full range", start:"Range", opties:"options",
+         systemen:"systems", offerte:"Request a quote",
+         kamers:"chambers", dichtingen:"gaskets", houtlagen:"wood layers", rails:"rail(s)",
+         diepte:"mm depth", beglazing:"mm glazing",
+         lead:"From windows and doors to shutters, garage doors and pergolas — manufactured in our European factory, delivered and installed by us across the Netherlands." },
+    de:{ titel:"Unser gesamtes Sortiment", start:"Sortiment", opties:"Optionen",
+         systemen:"Systeme", offerte:"Preis anfragen",
+         kamers:"Kammern", dichtingen:"Dichtungen", houtlagen:"Holzlagen", rails:"Schiene(n)",
+         diepte:"mm Bautiefe", beglazing:"mm Verglasung",
+         lead:"Von Fenstern und Türen bis zu Rollläden, Garagentoren und Pergolen — hergestellt in unserem europäischen Werk, von uns geliefert und montiert." },
+    tr:{ titel:"Tüm ürün yelpazemiz", start:"Ürünler", opties:"seçenek",
+         systemen:"sistem", offerte:"Fiyat teklifi al",
+         kamers:"odacık", dichtingen:"conta", houtlagen:"ahşap katman", rails:"ray",
+         diepte:"mm derinlik", beglazing:"mm cam",
+         lead:"Pencere ve kapılardan panjur, garaj kapısı ve pergolalara kadar — Avrupa fabrikamızda üretilir, tarafımızca teslim ve monte edilir." },
+  };
+ 
+  let cats = [], sys = [], pad = [];   // pad = kruimelpad
+  const taal = () => T[document.documentElement.lang] ? document.documentElement.lang : 'nl';
+  const t = () => T[taal()];
+  const nm = (o) => (o && (o[taal()] || o.nl)) || '';
+ 
+  const specChips = (s) => {
+    const L = t(), c = [];
+    if (s.kamers)       c.push(`${s.kamers} ${L.kamers}`);
+    if (s.dichtingen)   c.push(`${s.dichtingen} ${L.dichtingen}`);
+    if (s.houtlagen)    c.push(`${s.houtlagen} ${L.houtlagen}`);
+    if (s.rails)        c.push(`${s.rails} ${L.rails}`);
+    if (s.diepte_mm)    c.push(`${s.diepte_mm} ${L.diepte}`);
+    if (s.beglazing_mm) c.push(`${s.beglazing_mm} ${L.beglazing}`);
+    if (s.ug)           c.push(`Ug ${s.ug}`);
+    return c.length ? `<ul class="kd-specs">${c.map(x=>`<li>${x}</li>`).join('')}</ul>` : '';
+  };
+ 
+  const kaart = ({ img, naam, meta, specs, cta, cls, onClick, href }) => {
+    const el = document.createElement(href ? 'a' : 'button');
+    el.className = 'kd-card' + (cls ? ' ' + cls : '');
+    if (href) el.href = href;
+    el.innerHTML = `
+      <img src="${img}" alt="${naam} — Kozijnendaal" loading="lazy" width="900" height="675"
+           onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.src.replace(/\\.\\w+$/,'.png');}
+                    else if(this.dataset.f=='1'){this.dataset.f=2;this.src=this.src.replace(/\\.\\w+$/,'.jpg');}">
+      <div class="kd-card-body">
+        <h3>${naam}</h3>
+        ${meta ? `<span class="kd-card-meta">${meta}</span>` : ''}
+        ${specs || ''}
+        ${cta ? `<span class="kd-card-cta">${cta} &rarr;</span>` : ''}
+      </div>`;
+    if (onClick) el.addEventListener('click', onClick);
+    return el;
+  };
+ 
+  function kruimels() {
+    KRUI.innerHTML = '';
+    const stappen = [{ label: t().start, fn: () => (pad = [], teken()) },
+      ...pad.map((p, i) => ({ label: nm(p.naam), fn: () => (pad = pad.slice(0, i + 1), teken()) }))];
+    stappen.forEach((s, i) => {
+      if (i) KRUI.insertAdjacentHTML('beforeend', '<span class="sep">/</span>');
+      const b = document.createElement('button');
+      b.textContent = s.label;
+      b.addEventListener('click', s.fn);
+      KRUI.appendChild(b);
+    });
+    KRUI.style.display = pad.length ? 'flex' : 'none';
+  }
+ 
+  function teken() {
+    kruimels();
+    const niveau = pad.length;
+ 
+    if (niveau === 0) {
+      TIT.textContent = t().titel; LEAD.textContent = t().lead;
+      GRID.replaceChildren(...cats.map(c => kaart({
+        cls: 'cat', img: c.afbeelding, naam: nm(c.naam),
+        meta: c.sub?.length ? `${c.sub.length} ${t().opties}` : '',
+        onClick: () => (c.sub?.length ? (pad = [c], teken()) : location.assign(CALC)),
+      })));
+    } else if (niveau === 1) {
+      const c = pad[0];
+      TIT.textContent = nm(c.naam); LEAD.textContent = '';
+      GRID.replaceChildren(...c.sub.map(s => {
+        const n = sys.filter(x => x.ouder === s.slug).length;
+        return kaart({
+          cls: 'cat', img: s.afbeelding, naam: nm(s.naam),
+          meta: n ? `${n} ${t().systemen}` : '',
+          onClick: () => (n ? (pad = [c, s], teken()) : location.assign(CALC)),
+        });
+      }));
+    } else {
+      const s = pad[1];
+      TIT.textContent = nm(s.naam); LEAD.textContent = '';
+      GRID.replaceChildren(...sys.filter(x => x.ouder === s.slug).map(x => kaart({
+        img: x.afbeelding, naam: x.naam, specs: specChips(x),
+        cta: t().offerte, href: CALC,
+      })));
+    }
+    GRID.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+ 
+  window.kdHertekenAssortiment = teken;
+  document.addEventListener('taalgewijzigd', teken);
+ 
+  Promise.all([
+    fetch('data/producten.json').then(r => r.json()),
+    fetch('data/systemen.json').then(r => r.json()).catch(() => ({ systemen: [] })),
+  ]).then(([p, s]) => { cats = p.producten; sys = s.systemen; teken(); })
+    .catch(() => { GRID.innerHTML = '<p class="kd-loading">Assortiment tijdelijk niet beschikbaar.</p>'; });
+})();
+</script>
+  
 <!-- ============================================================
      PRICE CALCULATOR — gömülü konfigüratör (light variant)
      ============================================================ -->
