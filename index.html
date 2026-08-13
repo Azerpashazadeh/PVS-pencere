@@ -801,7 +801,7 @@
     el.innerHTML = `
       <img src="${img}" alt="${naam} — Kozijnendaal" loading="lazy" width="900" height="675"
            onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.src.replace(/\\.\\w+$/,'.png');}
-                    else if(this.dataset.f=='1'){this.dataset.f=2;this.src=this.src.replace(/\\.\\w+$/,'.jpg');}">
+                    else if(this.dataset.f=='1'){this.dataset.f=2;this.src=this.src.replace(/\\.\\w+$/,'.jpg');} else {this.style.display='none';}">
       <div class="kd-card-body">
         <h3>${naam}</h3>
         ${meta ? `<span class="kd-card-meta">${meta}</span>` : ''}
